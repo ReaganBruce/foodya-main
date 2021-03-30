@@ -3,13 +3,7 @@ import examples from './dbqueries/exampleQ'
 
 
 
-export const pool = mysql.createPool({
-    host: "localhost",
-    port: 3306,
-    user: "example",
-    password: "Example123",
-    database: "example"
-})
+export const pool = mysql.createPool({})
 
 
 export const Query = <T = any>(query: string, values?: any) => {
