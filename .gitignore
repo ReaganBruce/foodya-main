@@ -1,0 +1,10 @@
+# dependencies
+node_modules/
+
+# production bundles
+dist/
+public/js/app.js
+README.md
+
+# env. variables
+.env
