@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Home from './pages/home';
 
 
 const App: React.FC<IAppProps> = () => {
@@ -7,8 +8,8 @@ const App: React.FC<IAppProps> = () => {
 		<>
 			<BrowserRouter>
 				<Switch>
-					<Route>
-						
+					<Route exact path = '/'>	
+						<Home />
 					</Route>
 				</Switch>
 			</BrowserRouter>
