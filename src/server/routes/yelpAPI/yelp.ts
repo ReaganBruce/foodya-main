@@ -33,6 +33,7 @@ router.get('/:searchterm/:searchlocation', async (req, res) => {
 
 //GET localhost:3000/yelp/id
 router.get('/:foodtruckid', async (req, res) => {
+    console.log('test food truck!')
     const foodtruckid = req.params.foodtruckid;
     try {
         const foodtruckResponse = await got(`https://api.yelp.com/v3/businesses/${foodtruckid}`,
@@ -46,18 +47,20 @@ router.get('/:foodtruckid', async (req, res) => {
 })
 
 //GET localhost:3000/yelp/id/reviews
-router.get('/:reviewsid/reviews', async (req, res) => {
+router.get('/businesses/:reviewsid/reviews', async (req, res) => {
     const userReviewsid = req.params.reviewsid;
-    console.log("dnmasndjasd");
-    try {
-        const userReviewsResponse = await got(`https://api.yelp.com/v3/businesses/${userReviewsid}/reviews`,
+    try { 
+        const truckReviewsId = await got(`https://api.yelp.com/v3/businesses/${userReviewsid}/reviews`,
         {
             headers: apiHeaders
+
         });
-        res.send(userReviewsResponse.body);
+        res.send(truckReviewsId.body);
     } catch (error) {
+        console.log(error);
         res.status(500).json({ error: error.message })
     }
+
 })
 
 export default router;
