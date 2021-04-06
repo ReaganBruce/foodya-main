@@ -36,8 +36,8 @@ router.get('/', async (req, res) => {
 router.post('/', (req, res) => {
     const postsTags = req.body;
     try {
-         let postedTags = postsTags.forEach(async () => (
-            await db.tags.postTag(postsTags)
+         let postedTags = postsTags.forEach(async (tag: any) => (
+            await db.tags.postTag(tag)
         ));
         res.json(postedTags);
     } catch (error) {

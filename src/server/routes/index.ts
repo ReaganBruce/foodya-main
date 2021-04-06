@@ -1,6 +1,7 @@
 import * as express from 'express';
 import apiRouter from './api';
 import authRouter from './api';
+import yelpRouter from './yelpApi/yelp';
 
 const router = express.Router();
 
@@ -8,6 +9,9 @@ const router = express.Router();
 router.use('/api', apiRouter)
 //localhost:3000/auth/
 router.use('/auth', authRouter);
+//localhost:3000/yelp/
+router.use('/yelp', yelpRouter);
+
 
 
 export default router;

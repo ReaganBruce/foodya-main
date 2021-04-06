@@ -9,7 +9,8 @@ import userTagsRouter from './userTags';
 import userRouter from './user/user';
 import vendorRouter from './vendor/vendor';
 import userloginRouter from '../auth/userAuth/userlogin';
-import vendorloginRouter from '../auth/vendorAuth/vendorlogin'
+import vendorloginRouter from '../auth/vendorAuth/vendorlogin';
+
 
 
 
@@ -49,6 +50,9 @@ router.use('/vendor', vendorRouter);
 router.use('/userlogin', userloginRouter);
 //localhost:3000/auth/vendorlogin
 router.use('/vendorlogin', vendorloginRouter);
+
+
+
 
 
 
