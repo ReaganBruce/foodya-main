@@ -7,11 +7,13 @@ import Login from './pages/Login';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import BecomeVendor from './pages/BecomeVendor';
+import Trucks from './pages/Trucks'
+import TruckDetails from './pages/TruckDetails';
 
 //User Routes
 import UserProfile from './pages/UserProfile';
 import UserFavorites from './pages/UserFavorites';
-import FavoriteVendor from './pages/FavoriteVendor';
+import VendorDetails from './pages/VendorDetails';
 
 //Vendor Routes
 import VendorLogin from './pages/VendorLogin';
@@ -39,6 +41,14 @@ const App: React.FC<IAppProps> = () => {
 					<Route exact path = '/becomevendor'>	
 						<BecomeVendor />
 					</Route>
+					//localhost:3000/trucks
+					<Route exact path = '/trucks'>	
+						<Trucks />
+					</Route>
+					//localhost:3000/trucks/:truckdetails
+					<Route exact path = '/trucks/:truckdetailsid'>	
+						<TruckDetails />
+					</Route>
 					//localhost:3000/login
 					<Route exact path = '/login'>	
 						<Login />
@@ -53,7 +63,7 @@ const App: React.FC<IAppProps> = () => {
 					</Route>
 					//localhost:3000/login/favorites/:vendorid
 					<Route exact path = '/login/favorites/:vendorid'>	
-						<FavoriteVendor />
+						<VendorDetails />
 					</Route>
 					//localhost:3000/login/vendor
 					<Route exact path = '/login/vendor'>	
