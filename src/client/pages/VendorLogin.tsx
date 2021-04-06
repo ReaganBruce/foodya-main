@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-const Home: React.FC<HomeProps> = () => {
+const VendorLogin: React.FC<IVendorLogin> = () => {
     return (
         <>
             <main className="container">
                 <section className="row">
                     <div className="col-12">
-                        <h1 className="text-center">This is a page for Home!</h1>
+                        <h1 className="text-center">This is a page for VendorLogin!</h1>
                     </div>
                 </section>
             </main>
@@ -15,6 +15,6 @@ const Home: React.FC<HomeProps> = () => {
 
 }
 
-interface HomeProps {}
+interface IVendorLogin {}
 
-export default Home;
+export default VendorLogin;

@@ -7,13 +7,10 @@ const router = express.Router();
 const apiSecret = process.env.YELP_API_KEY
 const clientSecret = process.env.YELP_CLIENT_ID
 
-
-
 const apiHeaders = {
     'Authorization': `Bearer ${apiSecret}`,
     'client_id': `${clientSecret}`
 };
-
 
 //GET localhost:3000/yelp/food-truck/birmingham-al
 router.get('/:searchterm/:searchlocation', async (req, res) => {
@@ -29,7 +26,6 @@ router.get('/:searchterm/:searchlocation', async (req, res) => {
         res.status(500).json({ error: error.message })
     }
 })
-
 
 //GET localhost:3000/yelp/id
 router.get('/:foodtruckid', async (req, res) => {

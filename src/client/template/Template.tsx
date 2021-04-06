@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const Template: React.FC<Template> = () => {
+const Template: React.FC<ITemplate> = () => {
     return (
         <>
             <main className="container">
@@ -15,7 +15,7 @@ const Template: React.FC<Template> = () => {
 
 }
 
-interface Template {}
+interface ITemplate {}
 
 export default Template;
 
