@@ -7,8 +7,9 @@ import Login from './pages/Login';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import BecomeVendor from './pages/BecomeVendor';
-import Trucks from './pages/Trucks'
+import Trucks from './pages/Trucks';
 import TruckDetails from './pages/TruckDetails';
+
 
 //User Routes
 import UserProfile from './pages/UserProfile';
@@ -45,11 +46,10 @@ const App: React.FC<IAppProps> = () => {
 					<Route exact path = '/trucks'>	
 						<Trucks />
 					</Route>
-					//localhost:3000/trucks/:truckdetails
+					//localhost:3000/trucks/:truckdetailsid
 					<Route exact path = '/trucks/:truckdetailsid'>	
 						<TruckDetails />
 					</Route>
-					//localhost:3000/login
 					<Route exact path = '/login'>	
 						<Login />
 					</Route>
