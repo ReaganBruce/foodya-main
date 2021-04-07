@@ -1,6 +1,10 @@
 import * as React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
+//Utils Routes
+import Nav from './components/Nav';
+
+
 //Other Routes
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -9,7 +13,6 @@ import Contact from './pages/Contact';
 import BecomeVendor from './pages/BecomeVendor';
 import Trucks from './pages/Trucks';
 import TruckDetails from './pages/TruckDetails';
-
 
 //User Routes
 import UserProfile from './pages/UserProfile';
@@ -25,6 +28,7 @@ const App: React.FC<IAppProps> = () => {
 	return (
 		<>
 			<BrowserRouter>
+			<Nav />
 				<Switch>
 					//localhost:3000/
 					<Route exact path = '/'>	

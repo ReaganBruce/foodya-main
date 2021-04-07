@@ -6,7 +6,7 @@ const VendorProfile: React.FC<IVendorProfile> = () => {
             <main className="container">
                 <section className="row">
                     <div className="col-12">
-                        <h1 className="text-center">This is a page for VendorProfile!</h1>
+                        <h1 className="text-center">UPDATE YOUR INFO HERE</h1>
                     </div>
                 </section>
             </main>
