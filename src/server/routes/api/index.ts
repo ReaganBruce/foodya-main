@@ -8,13 +8,7 @@ import businessTagsRouter from './businessTags';
 import userTagsRouter from './userTags';
 import userRouter from './user/user';
 import vendorRouter from './vendor/vendor';
-import userloginRouter from '../auth/userAuth/userlogin';
-import vendorloginRouter from '../auth/vendorAuth/vendorlogin';
-
-
-
-
-
+import userloginRouter from '../auth/userlogin';
 
 
 
@@ -48,8 +42,6 @@ router.use('/vendor', vendorRouter);
 
 //localhost:3000/auth/userlogin
 router.use('/userlogin', userloginRouter);
-//localhost:3000/auth/vendorlogin
-router.use('/vendorlogin', vendorloginRouter);
 
 
 
