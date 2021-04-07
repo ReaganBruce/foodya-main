@@ -6,7 +6,7 @@ const Contact: React.FC<IContact> = () => {
             <main className="container">
                 <section className="row">
                     <div className="col-12">
-                        <h1 className="text-center">This is a page for Contact!</h1>
+                    
                     </div>
                 </section>
             </main>

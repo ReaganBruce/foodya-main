@@ -11,7 +11,7 @@ CREATE TABLE users (
 	id INT NOT NULL AUTO_INCREMENT,
     username VARCHAR(50) NOT NULL UNIQUE,
     email VARCHAR(75) NOT NULL UNIQUE,
-	password VARCHAR(50) NOT NULL,
+	password VARCHAR(200) NOT NULL,
     roll VARCHAR(50) DEFAULT 'user',
     created_at TIMESTAMP DEFAULT NOW(),
     PRIMARY KEY (id)
@@ -185,4 +185,3 @@ SELECT vendors.email, vendors.password FROM vendors;
 CREATE USER 'foodya_app'@'localhost' IDENTIFIED WITH mysql_native_password BY 'foodya_app_pw';
 GRANT ALL PRIVILEGES ON foodya.* TO 'foodya_app'@'localhost';
 FLUSH PRIVILEGES;
-
