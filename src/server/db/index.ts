@@ -1,4 +1,5 @@
 import * as mysql from 'mysql';
+import config from "../config";
 import business from '../db/dbqueries/businessQ';
 import reviews from '../db/dbqueries/reviewsQ';
 import locations from '../db/dbqueries/locationQ';
@@ -10,13 +11,7 @@ import user from '../db/dbqueries/userQueries/userQ';
 import vendor from '../db/dbqueries/vendorQueries/vendorQ';
 
 
-
-export const pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    database: 'foodya'
-})
+export const pool = mysql.createPool(config.db)
 
 
 export const Query = <T = any>(query: string, values?: any) => {

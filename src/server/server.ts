@@ -2,8 +2,12 @@ require('dotenv').config();
 import * as express from 'express';
 import * as path from 'path';
 import routes from './routes';
+import { configurePassport } from "./middlewares/passport-strategies.mw";
+
 const app = express();
 
+
+configurePassport(app);
 app.use(express.static('public'));
 app.use(express.json());
 app.use(routes);
