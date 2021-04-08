@@ -8,6 +8,7 @@ import Nav from './components/Nav';
 //Other Routes
 import Home from './pages/Home';
 import Login from './pages/Login';
+import Register from "./pages/Register"
 import About from './pages/About';
 import Contact from './pages/Contact';
 import BecomeVendor from './pages/BecomeVendor';
@@ -22,13 +23,14 @@ import VendorDetails from './pages/VendorDetails';
 //Vendor Routes
 import VendorLogin from './pages/VendorLogin';
 import VendorProfile from './pages/VendorProfile';
+import NavBar from "./components/NavBar"
 
 
 const App: React.FC<IAppProps> = () => {
 	return (
 		<>
 			<BrowserRouter>
-			<Nav />
+			<NavBar />
 				<Switch>
 					//localhost:3000/
 					<Route exact path = '/'>	
@@ -43,7 +45,7 @@ const App: React.FC<IAppProps> = () => {
 						<Contact />
 					</Route>
 					//localhost:3000/becomevendor
-					<Route exact path = '/becomevendor'>	
+					<Route exact path = '/become-a-vendor'>	
 						<BecomeVendor />
 					</Route>
 					//localhost:3000/trucks
@@ -56,6 +58,9 @@ const App: React.FC<IAppProps> = () => {
 					</Route>
 					<Route exact path = '/login'>	
 						<Login />
+					</Route>
+					<Route exact path = '/register'>	
+						<Register />
 					</Route>
 					//localhost:3000/login/profile
 					<Route exact path = '/login/profile'>	
