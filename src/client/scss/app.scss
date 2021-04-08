@@ -2,4 +2,13 @@ $theme-colors: (
     'primary': #0091ea //Covalence Blue!  :D
 );
 
+
+.container{
+    background-color:#FFFFFF
+}
+.container-contact{
+    background-color:#FFFFFF
+}
+
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+

@@ -10,10 +10,11 @@ import user from '../db/dbqueries/userQueries/userQ';
 import vendor from '../db/dbqueries/vendorQueries/vendorQ';
 
 
+
 export const pool = mysql.createPool({
     host: 'localhost',
-    user: 'foodya_app',
-    password: 'foodya_app_pw',
+    user: 'root',
+    password: 'root',
     database: 'foodya'
 })
 
