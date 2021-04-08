@@ -10,6 +10,8 @@
     background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
     padding-top: 1.5rem;
     padding-bottom: 0.5rem;
+    position: relative;
+    z-index: 15;
 }
 
 .inner-ribbon {
@@ -42,12 +44,13 @@
     filter: drop-shadow(0mm 1mm .5mm rgba(0, 0, 0, 0.432));
 }
 
-.col-md-3 {
+.a {
+    z-index: 10;
+    height:250px;
+    width:400px;
     position: absolute !important;
-    height:auto;
-    width:auto;
-    left: 10px;
-    top: -60px;
+    left: -20px;
+    top: -10px;
 }
 
 .foodya {
