@@ -3,7 +3,9 @@ import {  Link, useParams } from 'react-router-dom';
 
 
 const Trucks: React.FC<ITrucks> = () => {
-    const { truckdetailsid } = useParams<{ truckdetailsid: string }>();
+const { truckdetailsid } = useParams<{ truckdetailsid: string }>();
+
+
 
     return (
         <>
