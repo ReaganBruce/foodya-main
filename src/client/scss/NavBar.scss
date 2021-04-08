@@ -1,0 +1,94 @@
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.background-ribbon {
+    background-color: rgba(0, 106, 113, 0.8);
+    border-top: 4px solid rgba(0, 68, 69, 0.79);
+    border-bottom: 4px solid rgba(0, 68, 69, 0.79);
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.inner-ribbon {
+    border-top: 3px solid rgba(0, 68, 69, 0.76);
+    border-bottom: 3px solid rgba(0, 68, 69, 0.76);
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+    background-color: rgba(211, 222, 50, 1);
+    filter: drop-shadow(-.5mm 1mm 1mm rgba(0, 0, 0, 0.432));
+}
+
+.bl-text{
+    color: black;
+}
+
+.webname{
+    color: white;
+    font-size: 60px;
+    font-family: Abril Fatface;
+    text-align: center;
+}
+
+.w-text{
+    color: white !important;
+}
+
+.btn-custom {
+    background-color: rgb(0, 68, 69) !important;
+    font-family: Abril Fatface;
+    filter: drop-shadow(0mm 1mm .5mm rgba(0, 0, 0, 0.432));
+}
+
+.col-md-3 {
+    position: absolute !important;
+    height:auto;
+    width:auto;
+    left: 10px;
+    top: -60px;
+}
+
+.foodya {
+    display: none;
+    color: white;
+    font-size: 60px;
+    font-family: Abril Fatface;
+    text-align: center;
+}
+
+@media screen and (max-width: 992px) {
+    .image1 {
+        display: none;
+    }
+    .dummy {
+        display: none;
+    }
+    .foodya {
+        display: flex;
+        color: white;
+        font-size: 30px;
+        font-family: Pacifico;
+        text-align: center;
+    }
+    .background-ribbon {
+        padding-top: 1px;
+        padding-bottom: .5rem;
+    }
+}
+@media screen and (max-width: 394px) {
+    .big {
+        border-top: 1px solid black;
+    }
+}
+@media screen and (min-width: 395px) and (max-width: 540px) {
+    .bl-text {
+        border-left: 1px solid black;
+        padding-left: 5px;
+    }
+    .big {
+        border-right: 1px solid black;
+        padding-right: 5px;
+    }
+}

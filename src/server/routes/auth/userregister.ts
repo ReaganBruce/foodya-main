@@ -12,6 +12,7 @@ router.post("/", async (req, res) => {
     const newUser = req.body;
     try {
         newUser.password = generateHash(newUser.password)
+        console.log(newUser.password);
         const result = await db.user.insert(newUser);
         console.log(newUser);
         //@ts-ignore
