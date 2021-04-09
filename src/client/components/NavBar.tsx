@@ -12,6 +12,9 @@ const NavBar: React.FC<INavBar> = () => {
     if(webname == "Become-a-vendor") {
         webname = "Become A Vendor!"
     }
+    if(path.includes("trucks/")) {
+        webname = "New Discovery!"
+    }
     const TOKEN = window.localStorage.getItem("token");
 
     return (
