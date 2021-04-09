@@ -19,7 +19,7 @@ const NavBar: React.FC<INavBar> = () => {
             <div className="background-ribbon shadow">
                 <div className="foodya justify-content-center">FoodYA!</div>
                 <nav className="nav inner-ribbon justify-content-around shadow py-1">
-                    <img className="image1 col-sm-12 col-md-3 " src="food-truck.png"></img>
+                    <img className="a image1 col-sm-12" src="../assests/thisone.png"></img>
                     <div className="dummy"></div>
                     <div className="dummy"></div>
                     <div className="dummy"></div>
