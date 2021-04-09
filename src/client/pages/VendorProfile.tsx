@@ -1,6 +1,12 @@
 import * as React from "react";
 
 const VendorProfile: React.FC<IVendorProfile> = () => {
+
+
+
+
+
+
   return (
     <>
       <main className="container">
@@ -13,8 +19,7 @@ const VendorProfile: React.FC<IVendorProfile> = () => {
                   <div className="p-3 border bg-light">Vendor</div>
                 </div>
                 <div className="col">
-                  <div className="p-3 border bg-light">Business Name</div>
-                  
+                  <div className="p-3 border bg-light">Business Name</div> 
                 </div>
               </div>
             </div>

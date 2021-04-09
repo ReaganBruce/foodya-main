@@ -1,37 +1,80 @@
-
 #user-register-div {
-    margin-top: 5vh;
-    border-radius: 1vh;
-    margin-right: 0vh;
-    width: 50vw;
-    height: 70vh;
-    background-color: #006a71;
-    box-shadow: 8px 8px 9px -8px black;
-};
-
-
-#foodya-register {
-    margin-top: 3vh;
-    margin-left: 31vh;
-    color: white;
-    text-decoration: underline;
-    text-decoration-color: #D3DE32;
-    font-size: 10vh;
-    font-family: Pacifico;
-};
-
-
-#register-user-div-input {
-    text-align: center;
-    margin-left: 40vh;
-    margin-bottom: 13vh;
+  margin-top: 5vh;
+  border-radius: 1vh;
+  margin-right: 0vh;
+  width: 50vw;
+  height: 70vh;
+  background-color: #006a71;
+  box-shadow: 8px 8px 9px -8px black;
 }
 
-#user-email-label, #user-name-label, #user-password-label {
-    font-size: 3vh;
-    padding: 1vh;
-    color: white;
-    font-weight: bold;
-    text-decoration: underline;
-    text-decoration-color: #D3DE32;
-};
+#foodya-register {
+  margin-top: 3vh;
+  margin-left: 31vh;
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: #d3de32;
+  font-size: 10vh;
+  font-family: Pacifico;
+}
+
+#register-user-div-input {
+  text-align: center;
+  margin-left: 32vh;
+  margin-bottom: 13vh;
+}
+
+#user-email-label,
+#user-name-label,
+#user-password-label {
+  font-size: 3vh;
+  padding: 1vh;
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: #d3de32;
+}
+
+#user-email-input,
+#user-name-input,
+#user-password-input {
+  width: 40vh;
+}
+
+#truck-wrapper {
+  position: absolute;
+  width: 100%;
+}
+
+#moving-truck {
+  position: absolute;
+  width: 10vh;
+  z-index: 10;
+  left: -100%;
+  animation: moveTruck 5s ease-in-out frontwards;
+  animation: moveTruck 5s ease-in-out backwards;
+}
+
+@keyframes moveTruck {
+  0% {
+    transform: translateX(0%);
+    left: 0;
+  }
+  50% {
+    transform: translateX(100%);
+    left: 100%;
+  }
+  100% {
+    transform: translateX(-100%);
+    left: -100%;
+  }
+}
+
+#moving-img {
+  width: 45vh;
+  height: 30vh;
+}
+
+#reg-btn {
+  margin-top: 2vh;
+}

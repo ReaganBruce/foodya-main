@@ -95,8 +95,16 @@ const Register: React.FC<IRegister> = () => {
                                         type="password"
                                         placeholder="Password..."
                                     />
-                                    <div className="d-flex justify-content-end">
-                                        <button onClick={handleSubmit} className="btn btn-warning btn-lg">Register!</button>
+                                    
+                                    <div id="truck-wrapper">
+                                        <div id="moving-truck">
+                                        <img id="moving-img" src="../assests/thisone.png"></img>
+                                        </div>
+                                    </div>
+
+                                    <div className="d-flex justify-content-center">
+                                        <button id="reg-btn" onClick={handleSubmit}  className="btn btn-warning btn-lg">Register!</button>
+                                        
                                     </div>
 
                                 </form>
