@@ -1,5 +1,4 @@
 import * as React from 'react';
-import './scss/app';
 
 const Home: React.FC<HomeProps> = () => {
     return (
