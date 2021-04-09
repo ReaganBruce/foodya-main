@@ -3,11 +3,90 @@
 @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Patua+One&family=Quicksand:wght@500&display=swap');
 
+.behind {
+    position:absolute;
+    z-index: -1;
+}
+
+.margin-210 {
+    margin-left: 210px;
+}
+
+.margin-top-25 {
+    margin-top: 25px;
+}
+
+@media screen and (max-width: 992px) {
+    .bham-image{ 
+        display: none;
+    }
+
+}
+.bham-image {
+    width: 52.083333333333336vw;
+    height: 350px;
+    bottom: 3px;
+    opacity: 40%;
+    border-radius: 2000px;
+}
+
 .bl-abril-text {
     font-family: Abril Fatface;
     color: #000000;
     font-size: 70px;
 }
+
+.bl-medium-abril-text {
+    font-family: Abril Fatface;
+    color: #000000;
+    font-size: 40px;
+}
+
+.bl-small-abril-text {
+    font-family: Abril Fatface;
+    color: #000000;
+    font-size: 20px;
+}
+
+.w-medium-abril-text {
+    font-family: Abril Fatface;
+    color: #ffffff;
+    font-size: 40px;
+}
+
+.shadow {
+    filter: drop-shadow(0mm 1mm .5mm rgba(0, 0, 0, 0.432));
+}
+
+.w-small-abril-text {
+    font-family: Abril Fatface;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.bl-small-quicksand-text {
+    font-family: Quicksand;
+    color: #000000;
+    font-size: 18px;
+}
+
+.underlined {
+    text-decoration: underline;
+}
+
+.background-ribbon {
+    background-color: rgba(0, 106, 113, 0.8);
+    border-top: 4px solid rgba(0, 68, 69, 0.79);
+    border-bottom: 4px solid rgba(0, 68, 69, 0.79);
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+    z-index: 15;
+}
+
+
 
 //home card
 .hover-over {
@@ -26,12 +105,90 @@
     filter: drop-shadow(0mm 1mm .5mm rgba(0, 0, 0, 0.432));
 }
 
-.rating {
-    margin-left: 140px;
-    margin-bottom: 30px;
-    margin-right: 10px;
-    background-image: url('https://i.giphy.com/media/cNZqrH5IzOG0xrlWks/giphy.webp');
-    background-size: contain;
+
+@media screen and (max-width: 1199px) {
+    .rating {
+        margin-left: 140px;
+        margin-bottom: 30px;
+        margin-right: 10px;
+        background-image: url('https://i.giphy.com/media/cNZqrH5IzOG0xrlWks/giphy.webp');
+        background-size: contain;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 4000px) {
+    .rating {
+        margin-left: 175px;
+        margin-bottom: 30px;
+        margin-right: 60px;
+        background-image: url('https://i.giphy.com/media/cNZqrH5IzOG0xrlWks/giphy.webp');
+        background-size: contain;
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    .rating {
+        margin-left: 75px;
+        margin-bottom: 30px;
+        margin-right: 75px;
+        background-image: url('https://i.giphy.com/media/cNZqrH5IzOG0xrlWks/giphy.webp');
+        background-size: contain;
+    }
+    .card-photo {
+        display: none;
+    }
+    .name-margin {
+        margin-left: auto;
+        margin-top: auto;
+    }
+    .margin-210 {
+        margin-left: 1vw;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 993px) and (max-width: 4000px) {
+    .name-margin {
+        margin-left: 136px;
+        margin-top: 20px;
+    }
+    .invisible-big {
+        color: rgba(211, 255, 242, 0.001);
+    }
+}
+
+
+@media screen and (max-width: 991px) {
+    .rating {
+            margin-left: auto;
+            margin-bottom: auto;
+            margin-right: auto;
+            width: 65px;
+            height: 50px;
+            background-image: url('https://i.giphy.com/media/cNZqrH5IzOG0xrlWks/giphy.webp');
+            background-size:cover;
+    }
+    .invisible-big{
+        color: rgba(0, 0, 0, 1);
+        font-size: 30px;
+        text-align: center;
+        font-family: Abril Fatface;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .custom-card {
+        height: 250px;
+        border: 4px solid rgba(1, 105, 74, 0.692);
+        border-radius: 20px;
+        background-color:rgba(211, 255, 242, 0.692);
+        margin-bottom: 30px;
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 1000;
+        font-size: 20px;
+        filter: drop-shadow(0mm 1mm .5mm rgba(0, 0, 0, 0.432));
+    }
 }
 
 .tags {
@@ -40,14 +197,6 @@
     margin-right: 10px;
 }
 
-.invisible1 {
-    color: rgba(211, 255, 242, 0.001);
-}
-
-.name-margin {
-    margin-left: 136px;
-    margin-top: 20px;
-}
 .name {
     border: 3px solid rgba(0, 116, 81, 0.322);
     background-color:rgba(83, 255, 203, 0.459);
@@ -64,11 +213,7 @@
 }
 //done with home card
 
-.bl-small-abril-text {
-    font-family: Abril Fatface;
-    color: #000000;
-    font-size: 40px;
-}
+
 
 .curved {
     border-radius: 10px;

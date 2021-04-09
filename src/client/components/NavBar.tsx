@@ -14,6 +14,9 @@ const NavBar: React.FC<INavBar> = () => {
         webname = "Become A Vendor!"
     }
 
+    if(path.includes("trucks/")) {
+        webname = "New Discovery!"
+    }
     const TOKEN = window.localStorage.getItem("token");
 
     return (
