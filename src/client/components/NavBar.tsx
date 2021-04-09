@@ -6,12 +6,14 @@ const NavBar: React.FC<INavBar> = () => {
     const location = useLocation();
     const path = location.pathname;
     let webname: string = path.slice(1,2).toUpperCase() + path.slice(2);
+
     if(webname == "") {
         webname = "Welcome";
     }
     if(webname == "Become-a-vendor") {
         webname = "Become A Vendor!"
     }
+
     const TOKEN = window.localStorage.getItem("token");
 
     return (
