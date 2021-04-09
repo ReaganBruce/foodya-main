@@ -1,19 +1,50 @@
 
-  .container{
-      background-color:#f3f1f1;
+  .vendor-container{
+      display:flex;
+      flex-direction: row;
+      background-color:#ffffff;
+      
   } 
-  .container{
-      margin-bottom:60px;
+  
+
+#vendor-row{
+    height: 321px;
+    width: 754px;
+    left: 439px;
+    top: 355px;
+    display:inline-flex;
+    border:3px solid black;
+    border-radius: 50px;
+    
+
+}
+#vendor-div{
+    height: 321px;
+    width: 754px;
+    left: 439px;
+    top: 355px;
+    border-radius: 5px;
+    
+}
+  #rectangle-15{
+
+    height: 321px;
+width: 754px;
+left: 439px;
+top: 355px;
+border-radius: 50px;
+
   }
-.text-center{
-    color: blue;
-    margin-bottom:75px;
-}
-
-
-.row{
-    margin-bottom:10px;
-}
-.card{
-    margin-bottom:25px;
-}
+  #profile-container{
+      margin-top:5vh;
+  }
+  
+ #review-column {
+     margin-top:5vh;
+     
+ }
+  
+  
+  
+  @import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+  
