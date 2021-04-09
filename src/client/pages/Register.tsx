@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Link, useHistory } from "react-router-dom"
+import Swal from 'sweetalert2'
 
 const Register: React.FC<IRegister> = () => {
     const history = useHistory();
@@ -8,7 +9,7 @@ const Register: React.FC<IRegister> = () => {
     const [password, setPassword] = React.useState("");
 
     const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.preventDefault();
+            e.preventDefault();
         // console.log({ email, username, password });
         const res = await fetch("/auth/register", {
             method: "POST",
@@ -21,6 +22,17 @@ const Register: React.FC<IRegister> = () => {
         console.log(result);
         window.localStorage.setItem("token", result);
         history.push("/");
+
+         await Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: `Welcome ${username}!`,
+            imageUrl: './assets/cool-hair-guy.png',
+            imageWidth: 400,
+            imageHeight: 400,
+            showConfirmButton: false,
+            timer: 60000
+        })
     }
 
     return (

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Link, useHistory } from "react-router-dom"
+import Swal from 'sweetalert2'
 
 const Login: React.FC<ILogin> = () => {
     const history = useHistory();
@@ -20,7 +21,11 @@ const Login: React.FC<ILogin> = () => {
         console.log(result);
         window.localStorage.setItem("token", result);
         history.push("/");
+
     }
+
+
+
 
     return (
         <main className="container">

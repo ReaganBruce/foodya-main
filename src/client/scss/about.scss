@@ -1,17 +1,10 @@
-
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
 
 
 
 
 .col-12 d-flex {
   margin-top: 10vh;
-}
-
-#div-text {
-  color: white;
-  margin-right: 22vh;
-  margin-top: 3vh;
-  border-top: 1px solid #D3DE32;
 }
 
 
@@ -74,10 +67,16 @@
 
 #about-us-footer {
   margin-top: 5vh;
-  margin-bottom: 10vh;
+  margin-bottom: 15vh;
+}
+
+#footer-text{
+  text-decoration: underline;
+  text-decoration-color: #006a71;
 }
 
 #div-text-right-1 {
+    font-weight: bold;
     color: white;
     margin-right: 24vh;
     margin-top: 3vh;
@@ -87,6 +86,7 @@
 }
 
 #div-text-right-2 {
+  font-weight: bold;
   color: white;
   margin-right: 19vh;
   margin-top: 3vh;
@@ -95,12 +95,15 @@
 }
 
 #div-text-left {
+    font-weight: bold;
     color: white;
     margin-left: 22vh;
     margin-top: 3vh;
     text-decoration: underline;
     text-decoration-color: #D3DE32;
 }
+
+
 #vendor-div-img {
     width: 50vh;
 }
@@ -115,4 +118,6 @@
 
 
 
-@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+
