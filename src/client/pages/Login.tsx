@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link, useHistory } from "react-router-dom"
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 const Login: React.FC<ILogin> = () => {
     const history = useHistory();
