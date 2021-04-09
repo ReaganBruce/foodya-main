@@ -1,14 +1,47 @@
 import * as React from 'react';
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "../scss/general-styles";
 
 const Home: React.FC<HomeProps> = () => {
     const [search, setSearch] = useState("");
+    const [trucks, setTrucks] = useState(null);
+    const [featured, setFeatured] = useState([]);
+    const history = useHistory();
+    console.log(trucks)
 
-    function classToggle() {
-        var el = document.querySelector('.icon-cards__content');
+    React.useEffect(() => {
+        (async () => {
+            console.log("hello")
+            const res = await fetch("/yelp/food-truck/birmingham-al")
+            const trucks = await res.json();
+            setTrucks(trucks);
+        })();
+    }, []);
+
+    let classToggle = () => {
+        let el = document.querySelector('.icon-cards__content');
         el.classList.toggle('step-animation');
+    }
+
+    let handleFeatured = (id: any) => {
+        return function(e: any) {
+        history.push("/vendor/profile");
+        }
+    }
+
+    let displayFeatured = (truck: any) => {
+        if (truck.rating == 5) {
+            return (
+                <>
+                    <div key={`truck-preview-${truck.id}`} onClick={handleFeatured(truck.id)} className="hover-over col-5 custom-card text-fun">
+                        <img src={`${truck.image_url}`} key={`truck-photo-${truck.id}`} className="card-photo" alt=""/>
+                        <div key={`truck-name-${truck.id}`} className="name-margin mt-5 name d-flex text-center justify-content-center">{truck.name}</div>
+                        <div key={`truck-rating-${truck.id}`} className="rating invisible1">.</div>       
+                    </div>
+                </>
+            )
+        }
     }
 
     return (
@@ -36,11 +69,23 @@ const Home: React.FC<HomeProps> = () => {
                 </section>
                 <div className="spacing-50"></div>
                 <section className="row">
+                    <div className="mobile-on">Our purpose is to provide. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
                     <div className="d-flex justify-content-center col-md-12 my-5">
-                        <div className="col-4 d-flex align-items-center">Our purpose is to provide. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
-                        <img src="../assests/foodtruck-banner.png" alt="" />
-                        <div className="col-4 d-flex align-items-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                        <div className="mobile-off col-4">Our purpose is to provide. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                        <img className="image2" src="../assests/foodtruck-banner.png" alt="" />
+                        <div className="mobile-off col-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
                     </div>
+                    <div className="mobile-on">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                </section>
+                <section className="row">
+                    <div className="col-12">
+                        <div className="text-center p-4 bl-small-abril-text">Featured Trucks:</div>
+                    </div>
+                    <section className="container d-flex justify-content-around flex-wrap">
+                        {trucks?.businesses.map((truck: any) => (
+                            displayFeatured(truck)
+                        ))}
+                    </section>
                 </section>
 
             </main>
