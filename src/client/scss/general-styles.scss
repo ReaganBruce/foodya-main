@@ -1,10 +1,73 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&family=Quicksand:wght@500&display=swap');
 
 .bl-abril-text {
     font-family: Abril Fatface;
     color: #000000;
     font-size: 70px;
+}
+
+//home card
+.hover-over {
+    cursor: pointer;
+}
+
+.custom-card {
+    height: 200px;
+    border: 4px solid rgba(1, 105, 74, 0.692);
+    border-radius: 20px;
+    background-color:rgba(211, 255, 242, 0.692);
+    margin-bottom: 30px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 1000;
+    font-size: 20px;
+    filter: drop-shadow(0mm 1mm .5mm rgba(0, 0, 0, 0.432));
+}
+
+.rating {
+    margin-left: 140px;
+    margin-bottom: 30px;
+    margin-right: 10px;
+    background-image: url('https://i.giphy.com/media/cNZqrH5IzOG0xrlWks/giphy.webp');
+    background-size: contain;
+}
+
+.tags {
+    margin-left: 140px;
+    margin-bottom: 30px;
+    margin-right: 10px;
+}
+
+.invisible1 {
+    color: rgba(211, 255, 242, 0.001);
+}
+
+.name-margin {
+    margin-left: 136px;
+    margin-top: 20px;
+}
+.name {
+    border: 3px solid rgba(0, 116, 81, 0.322);
+    background-color:rgba(83, 255, 203, 0.459);
+    border-radius: 20px;
+}
+
+.card-photo {
+    position: absolute;
+    height: 150px;
+    width: 120px;
+    margin-top: 20px;
+    border-radius: 10px;
+    filter: drop-shadow(0mm 1mm .5mm rgba(0, 0, 0, 0.432));
+}
+//done with home card
+
+.bl-small-abril-text {
+    font-family: Abril Fatface;
+    color: #000000;
+    font-size: 40px;
 }
 
 .curved {
@@ -49,8 +112,36 @@
     }
 }
 
+@media screen and (min-width: 1104px) {
+    .mobile-off {
+        padding-top: 70px;
+        display: relative !important;
+    }
+    .mobile-on {
+        display: none;
+        padding: 10px;
+    }
 
+    // .custom-card {
+    //     margin: 20px;
+    // }
+}
 
+@media screen and (max-width: 1104px) {
+    .mobile-off {
+        display: none !important;
+    }
+    .mobile-on {
+        display: relative;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 464px) {
+    .image2 {
+        width: 360px;
+    }
+}
 
 
 
