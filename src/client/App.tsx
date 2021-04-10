@@ -14,6 +14,7 @@ import Contact from './pages/Contact';
 import BecomeVendor from './pages/BecomeVendor';
 import Trucks from './pages/Trucks';
 import TruckDetails from './pages/TruckDetails';
+import Recommendations from "./pages/Recommendation"
 
 //User Routes
 import UserProfile from './pages/UserProfile';
@@ -55,6 +56,10 @@ const App: React.FC<IAppProps> = () => {
 					//localhost:3000/trucks/:truckdetailsid
 					<Route exact path = '/trucks/:truckdetailsid'>	
 						<TruckDetails />
+					</Route >
+					//localhost:3000/trucks/recommendations
+					<Route exact path = '/recommendations'>
+						<Recommendations />
 					</Route>
 					<Route exact path = '/login'>	
 						<Login />

@@ -6,13 +6,13 @@ import "../scss/general-styles";
 const Home: React.FC<HomeProps> = () => {
     const [search, setSearch] = useState("");
     const [trucks, setTrucks] = useState(null);
+    const [truck, setTruck] = useState(null);
     const history = useHistory();
     console.log(trucks)
-    const [truck, setTruck] = useState(null);
 
     React.useEffect(() => {
         (async () => {
-            console.log("hello")
+            console.log("Hey I hope you like the home page! Its my first big project that I spent a lot of time on styling! Thanks for visiting!")
             const res = await fetch("/yelp/food-truck/birmingham-al")
             const trucks = await res.json();
             setTrucks(trucks);
@@ -66,7 +66,7 @@ const Home: React.FC<HomeProps> = () => {
                         <img src={`${truck.image_url}`} key={`truck-photo-${truck.id}`} className="card-photo" alt="" />
                         <div key={`truck-name-${truck.id}`} className="name-margin mt-5 name d-flex text-center justify-content-center">{truck.name}</div>
                         <div key={`truck-rating-${truck.id}`} className="bl-small-abril-text margin-210 margin-top-25">Check us out!</div>
-                    </div></div>) : (<div className="spacing-50"> </div>) }
+                    </div></div>) : (<div className="spacing-50"> </div>)}
                     <div className="col-12 d-flex justify-content-center">
                         <figure className="icon-cards mt-3">
                             <div className="icon-cards__content" >
