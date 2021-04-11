@@ -25,6 +25,7 @@ import VendorDetails from './pages/VendorDetails';
 import VendorLogin from './pages/VendorLogin';
 import VendorProfile from './pages/VendorProfile';
 import NavBar from "./components/NavBar"
+import PrivateRouter from "./components/PrivateRouter"
 
 
 const App: React.FC<IAppProps> = () => {
@@ -58,9 +59,9 @@ const App: React.FC<IAppProps> = () => {
 						<TruckDetails />
 					</Route >
 					//localhost:3000/trucks/recommendations
-					<Route exact path = '/recommendations'>
+					<PrivateRouter exact path = '/recommendations'>
 						<Recommendations />
-					</Route>
+					</PrivateRouter>
 					<Route exact path = '/login'>	
 						<Login />
 					</Route>
@@ -68,17 +69,17 @@ const App: React.FC<IAppProps> = () => {
 						<Register />
 					</Route>
 					//localhost:3000/login/profile
-					<Route exact path = '/login/profile'>	
+					<PrivateRouter exact path = '/login/profile'>	
 						<UserProfile />
-					</Route>
+					</PrivateRouter>
 					//localhost:3000/login/favorites
-					<Route exact path = '/login/favorites'>	
+					<PrivateRouter exact path = '/login/favorites'>	
 						<UserFavorites />
-					</Route>
+					</PrivateRouter>
 					//localhost:3000/login/favorites/:vendorid
-					<Route exact path = '/login/favorites/:vendorid'>	
+					<PrivateRouter exact path = '/login/favorites/:vendorid'>	
 						<VendorDetails />
-					</Route>
+					</PrivateRouter>
 					//localhost:3000/login/vendor
 					<Route exact path = '/login/vendor'>	
 						<VendorLogin />

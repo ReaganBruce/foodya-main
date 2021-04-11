@@ -1,13 +1,17 @@
 import * as React from 'react';
 import { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
+import { resolveModuleNameFromCache } from 'typescript';
 import "../scss/general-styles";
 
 const Home: React.FC<HomeProps> = () => {
     const [search, setSearch] = useState("");
     const [trucks, setTrucks] = useState(null);
     const [truck, setTruck] = useState(null);
+    const [hey, setHey] = useState(null);
     const history = useHistory();
+    const WelcomeBack = window.localStorage.getItem("hey");
+    const checkDark = window.localStorage.getItem("dark");
     // console.log(trucks)
 
     React.useEffect(() => {
@@ -49,11 +53,33 @@ const Home: React.FC<HomeProps> = () => {
         }
     }
 
+    let handleHey = () => {
+        let hey: string = "hey";
+        setHey(hey);
+    }
+
+    let handleWelcomeBack = () => {
+        let welcomeback = "welcomeback"
+        window.localStorage.setItem("hey", welcomeback);
+    }
+
+    let darkmode = () => {
+        if(!checkDark) {
+            window.localStorage.setItem("mode", "index2.scss");
+            window.localStorage.setItem("dark", "hi");
+        } else {
+            window.localStorage.removeItem("dark");
+            window.localStorage.removeItem("mode");
+        }
+        window.location.reload(true);
+    }
+
     return (
         <>
             <main className="container">
                 <section className="row">
                     <div className="col-12 my-4">
+                        <button onClick={darkmode}>click me</button>
                         <h1 className="my-4 text-center bl-abril-text">Find A Food Truck:</h1>
                     </div>
                     <section className="d-flex justify-content-center col-12 search-bar">
@@ -83,7 +109,9 @@ const Home: React.FC<HomeProps> = () => {
                     <div className="mobile-on bl-small-quicksand-text">Our purpose is to provide. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
                     <div className="d-flex justify-content-center col-md-12 my-5">
                         <p className="mobile-off col-3 bl-small-quicksand-text">Our purpose is to provide. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                        <img className="image2" src="../assests/foodtruck-banner.png" alt="" />
+                        <img className="image2" onMouseEnter={handleHey} onMouseLeave={handleWelcomeBack} src="../assests/foodtruck-banner.png" alt="" />
+                        {hey ? (<> <img className="image3 fade-in-text" src="../assests/speechbubble.png" alt=""/>
+                        {WelcomeBack ? (<div className="fade-in-text welcomeback bl-mid-abril-text text-shadow background-transparent text-wrap">Welcome back!</div>) : ( <div className="fade-in-text hey bl-medium-abril-text text-shadow background-transparent">Hey!</div> )}</>) : ( <span></span> )}
                         <p className="mobile-off col-3 bl-small-quicksand-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                     </div>
                     <div className="mobile-on bl-small-quicksand-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
