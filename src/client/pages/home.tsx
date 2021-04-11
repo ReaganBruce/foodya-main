@@ -8,7 +8,7 @@ const Home: React.FC<HomeProps> = () => {
     const [trucks, setTrucks] = useState(null);
     const [truck, setTruck] = useState(null);
     const history = useHistory();
-    console.log(trucks)
+    // console.log(trucks)
 
     React.useEffect(() => {
         (async () => {
@@ -62,7 +62,7 @@ const Home: React.FC<HomeProps> = () => {
                         <Link className="btn button" onClick={passinSearch} to={"/trucks"}>Search</Link>
                     </section>
                     <div className="d-flex justify-content-center spacing-100 col-12 mt-4"><span><button className="btn button" onClick={letFateDecide}>Let Fate Decide!</button></span></div>
-                    {truck ? (<div className="col-12 d-flex justify-content-center"><div key={`truck-preview-${truck.id}`} onClick={handleFeatured(truck.id)} className="hover-over col-5 custom-card text-fun">
+                    {truck ? (<div key={`key-${truck.id}`} className="col-12 d-flex justify-content-center"><div key={`truck-preview-${truck.id}`} onClick={handleFeatured(truck.id)} className="hover-over col-5 custom-card text-fun">
                         <img src={`${truck.image_url}`} key={`truck-photo-${truck.id}`} className="card-photo" alt="" />
                         <div key={`truck-name-${truck.id}`} className="name-margin mt-5 name d-flex text-center justify-content-center">{truck.name}</div>
                         <div key={`truck-rating-${truck.id}`} className="bl-small-abril-text margin-210 margin-top-25">Check us out!</div>

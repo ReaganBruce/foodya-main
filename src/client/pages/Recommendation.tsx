@@ -130,7 +130,7 @@ const Recommendations: React.FC<IRecommendations> = () => {
             })
         }
         let check = Math.max(...style());
-        console.log(check)
+        // console.log(check)
         return check;
     }
 
@@ -143,7 +143,7 @@ const Recommendations: React.FC<IRecommendations> = () => {
                     <div className="custom-flex">
                         {trucks?.businesses.map((truck: any) =>
                         (
-                            <div style={{ order: handleDisplay(truck) }} >
+                            <div key={`key-${truck.id}`} style={{ order: handleDisplay(truck) }} >
                                 {truck.name}
                             </div>
                         )

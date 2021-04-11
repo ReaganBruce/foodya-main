@@ -11,7 +11,7 @@ const Trucks: React.FC<ITrucks> = () => {
   const R = JSON.parse(window.localStorage.getItem("rec"));
   const history = useHistory();
 
-  console.log(rec);
+  // console.log(rec);
 
 
 
@@ -35,7 +35,7 @@ const Trucks: React.FC<ITrucks> = () => {
       setTrucks(trucks);
       if (TOKEN && R) {
         setRec(R);
-        console.log(rec);
+        // console.log(rec);
       }
     })();
   }, []);
@@ -44,7 +44,7 @@ const Trucks: React.FC<ITrucks> = () => {
     return function (e: any) {
       for (let index = 0; index < truck.categories.length; index++) {
         let tag = truck.categories[index].title;
-        console.log(tag);
+        // console.log(tag);
         if (TOKEN) {
           if (tag === "Food Trucks") { }
           else {
@@ -92,7 +92,7 @@ const Trucks: React.FC<ITrucks> = () => {
                     }
                   } // if they dont have anything thats in any of them it just spews them all back out. - we could probably do something with if (css style exists) then put out an error statement
                 }).map((truck: any) => {
-                  return <div onClick={handleFoodtruck(truck)}>{truck.name}</div>
+                  return <div key={`key-${truck.id}`} onClick={handleFoodtruck(truck)}>{truck.name}</div>
                 })}
               </div>
               <div className="card-footer text-muted">2 days ago</div>
