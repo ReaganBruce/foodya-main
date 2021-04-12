@@ -69,7 +69,7 @@ const BecomeVendor: React.FC<IBecomeVendor> = () => {
                                         placeholder="Password..."
                                     />
                                 </form>
-                                <Link to={'/login/vendor/profile'} id="vendor-submit-button" className="btn btn-warning btn-lg">
+                                <Link to={'/vendor/profile'} id="vendor-submit-button" className="btn btn-warning btn-lg">
                                     Next
                                     </Link>
                             </div>
