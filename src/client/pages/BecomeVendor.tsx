@@ -11,6 +11,7 @@ const BecomeVendor: React.FC<IBecomeVendor> = () => {
 
 
     return (
+
         <>
             <main id="become-vendor-container" className="container">
                 <div id="become-vendor-section" className="col-md-4 d-flex justify-content-center">
@@ -26,7 +27,6 @@ const BecomeVendor: React.FC<IBecomeVendor> = () => {
                         </p>
                         <img id="bham-img" src="./assets/bham.png" alt="bham-img" />
                     </div>
-
                     <div id="signup-vendor-section" className="col-md-4 d-flex justify-content-center">
                         <div id="signup-vendor-div" className="row">
                             <div id="signup-vendor-container">
@@ -38,7 +38,9 @@ const BecomeVendor: React.FC<IBecomeVendor> = () => {
                                     <div>
                                         <label id="vendor-name-label">VENDOR NAME</label>
                                     </div>
-                                    <input className=""id="vendor-name-input"
+                                    <input
+                                        className="form-control"
+                                        id="vendor-name-input"
                                         value={vendorName}
                                         onChange={(e) => setVendorName(e.target.value)}
                                         type="text"
@@ -49,6 +51,7 @@ const BecomeVendor: React.FC<IBecomeVendor> = () => {
                                         <label id="vendor-email-label">EMAIL</label>
                                     </div>
                                     <input id="vendor-email-input"
+                                        className="form-control"
                                         value={vendorEmail}
                                         onChange={(e) => setVendorEmail(e.target.value)}
                                         type="email"
@@ -59,6 +62,7 @@ const BecomeVendor: React.FC<IBecomeVendor> = () => {
                                         <label id="vendor-password-label">PASSWORD</label>
                                     </div>
                                     <input id="vendor-password-input"
+                                        className="form-control"
                                         value={vendorPassword}
                                         onChange={(e) => setVendorPassword(e.target.value)}
                                         type="password"
@@ -66,17 +70,27 @@ const BecomeVendor: React.FC<IBecomeVendor> = () => {
                                     />
                                 </form>
                                 <Link to={'/login/vendor/profile'} id="vendor-submit-button" className="btn btn-warning btn-lg">
-                                        Next
+                                    Next
                                     </Link>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
+
+
+
+
+
+
+
+
             </main>
         </>
     );
 }
-                                  
+
 
 
 

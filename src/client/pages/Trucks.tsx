@@ -5,6 +5,17 @@ import '../scss/trucks.scss';
 
 const Trucks: React.FC<ITrucks> = () => {
   const { truckdetailsid } = useParams<{ truckdetailsid: string }>();
+  const [trucks, setTrucks] = useState(null);
+
+  React.useEffect(() => {
+    (async () => {
+        console.log("hello")
+        const res = await fetch("/yelp/food-truck/birmingham-al")
+        const theTrucks = await res.json();
+        setTrucks(theTrucks);
+    })();
+}, []);
+  
 
   return (
     <>

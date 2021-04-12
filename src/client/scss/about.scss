@@ -37,6 +37,7 @@
 #about-vendors-div {
   border-radius: 1vh;
   background-color: #006a71;
+  
   height: 40vh;
   width: 75vw;
 }
@@ -65,10 +66,16 @@
 }
 
 
-
 #about-us-footer {
   margin-top: 5vh;
   margin-bottom: 15vh;
+};
+
+#about-us-btn {
+  border: 1px solid black;
+  border-radius: 20px !important;
+  background-color: rgba(248, 180, 0, 1) !important;
+  filter: drop-shadow(0mm 1mm .5mm rgba(0, 0, 0, 0.432));
 }
 
 #footer-text{

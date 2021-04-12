@@ -46,7 +46,7 @@
     filter: drop-shadow(0mm 1mm .5mm rgba(0, 0, 0, 0.432));
 }
 
-.a {
+.a{
     z-index: 10;
     height:250px;
     width:400px;
@@ -54,6 +54,31 @@
     left: -20px;
     top: -10px;
 }
+
+  .a {
+    position: absolute;
+    animation: moveTruck 7s ease-in-out frontwards;
+    animation: moveTruck 7s ease-in-out backwards;
+  }
+
+
+  @keyframes moveTruck {
+
+    0% {
+      transform: translateX(0%);
+      left: 0;
+    }
+    50% {
+      transform: translateX(100%);
+      left: 100%;
+    }
+    100% {
+      transform: translateX(0%);
+      left: 0%
+    }
+  }
+
+
 
 .foodya {
     display: none;
