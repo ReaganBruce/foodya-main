@@ -10,7 +10,8 @@ const Contact: React.FC<IContact> = () => {
           className="col-sm-2 justify-content-end flex-wrap m-0 pt-5"
         >
           <h3 className="ml-2 ">
-            Our mission is to provide a way of getting the answers to the
+            Our mission is to provide 
+            a way of getting the answers to the
             questions YOU have!
           </h3>
         </div>
