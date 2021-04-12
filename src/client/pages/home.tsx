@@ -1,18 +1,22 @@
 import * as React from 'react';
 import { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
+import { resolveModuleNameFromCache } from 'typescript';
 import "../scss/general-styles";
 
 const Home: React.FC<HomeProps> = () => {
     const [search, setSearch] = useState("");
     const [trucks, setTrucks] = useState(null);
-    const history = useHistory();
-    console.log(trucks)
     const [truck, setTruck] = useState(null);
+    const [hey, setHey] = useState(null);
+    const history = useHistory();
+    const WelcomeBack = window.localStorage.getItem("hey");
+    const checkDark = window.localStorage.getItem("dark");
+    // console.log(trucks)
 
     React.useEffect(() => {
         (async () => {
-            console.log("hello")
+            console.log("Hey I hope you like the home page! Its my first big project that I spent a lot of time on styling! Thanks for visiting!")
             const res = await fetch("/yelp/food-truck/birmingham-al")
             const trucks = await res.json();
             setTrucks(trucks);
@@ -49,11 +53,33 @@ const Home: React.FC<HomeProps> = () => {
         }
     }
 
+    let handleHey = () => {
+        let hey: string = "hey";
+        setHey(hey);
+    }
+
+    let handleWelcomeBack = () => {
+        let welcomeback = "welcomeback"
+        window.localStorage.setItem("hey", welcomeback);
+    }
+
+    let darkmode = () => {
+        if(!checkDark) {
+            window.localStorage.setItem("mode", "index2.scss");
+            window.localStorage.setItem("dark", "hi");
+        } else {
+            window.localStorage.removeItem("dark");
+            window.localStorage.removeItem("mode");
+        }
+        window.location.reload(true);
+    }
+
     return (
         <>
             <main className="container">
                 <section className="row">
                     <div className="col-12 my-4">
+                        <button onClick={darkmode}>click me</button>
                         <h1 className="my-4 text-center bl-abril-text">Find A Food Truck:</h1>
                     </div>
                     <section className="d-flex justify-content-center col-12 search-bar">
@@ -62,11 +88,11 @@ const Home: React.FC<HomeProps> = () => {
                         <Link className="btn button" onClick={passinSearch} to={"/trucks"}>Search</Link>
                     </section>
                     <div className="d-flex justify-content-center spacing-100 col-12 mt-4"><span><button className="btn button" onClick={letFateDecide}>Let Fate Decide!</button></span></div>
-                    {truck ? (<div className="col-12 d-flex justify-content-center"><div key={`truck-preview-${truck.id}`} onClick={handleFeatured(truck.id)} className="hover-over col-5 custom-card text-fun">
+                    {truck ? (<div key={`key-${truck.id}`} className="col-12 d-flex justify-content-center"><div key={`truck-preview-${truck.id}`} onClick={handleFeatured(truck.id)} className="hover-over col-5 custom-card text-fun">
                         <img src={`${truck.image_url}`} key={`truck-photo-${truck.id}`} className="card-photo" alt="" />
                         <div key={`truck-name-${truck.id}`} className="name-margin mt-5 name d-flex text-center justify-content-center">{truck.name}</div>
                         <div key={`truck-rating-${truck.id}`} className="bl-small-abril-text margin-210 margin-top-25">Check us out!</div>
-                    </div></div>) : (<div className="spacing-50"> </div>) }
+                    </div></div>) : (<div className="spacing-50"> </div>)}
                     <div className="col-12 d-flex justify-content-center">
                         <figure className="icon-cards mt-3">
                             <div className="icon-cards__content" >
@@ -83,7 +109,9 @@ const Home: React.FC<HomeProps> = () => {
                     <div className="mobile-on bl-small-quicksand-text">Our purpose is to provide. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
                     <div className="d-flex justify-content-center col-md-12 my-5">
                         <p className="mobile-off col-3 bl-small-quicksand-text">Our purpose is to provide. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                        <img className="image2" src="../assests/foodtruck-banner.png" alt="" />
+                        <img className="image2" onMouseEnter={handleHey} onMouseLeave={handleWelcomeBack} src="../assests/foodtruck-banner.png" alt="" />
+                        {hey ? (<> <img className="image3 fade-in-text" src="../assests/speechbubble.png" alt=""/>
+                        {WelcomeBack ? (<div className="fade-in-text welcomeback bl-mid-abril-text text-shadow background-transparent text-wrap">Welcome back!</div>) : ( <div className="fade-in-text hey bl-medium-abril-text text-shadow background-transparent">Hey!</div> )}</>) : ( <span></span> )}
                         <p className="mobile-off col-3 bl-small-quicksand-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                     </div>
                     <div className="mobile-on bl-small-quicksand-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
