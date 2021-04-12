@@ -12,6 +12,8 @@ const Home: React.FC<HomeProps> = () => {
     const history = useHistory();
     const WelcomeBack = window.localStorage.getItem("hey");
     const checkDark = window.localStorage.getItem("dark");
+    const [ctrl, setCtrl] = useState(false);
+    const [shift, setShift] = useState(false);
     // console.log(trucks)
 
     React.useEffect(() => {
@@ -22,6 +24,27 @@ const Home: React.FC<HomeProps> = () => {
             setTrucks(trucks);
         })();
     }, []);
+
+
+    //dark mode ctrl+shift+l
+    window.addEventListener("keydown", (e: any) => {
+        if (e.key == "Control") {
+            setCtrl(true);
+        } else if (e.key == "Shift") {
+            setShift(true);
+        } else if (e.key == "L" && ctrl == true && shift == true) {
+            darkmode();
+        }
+    })
+    window.addEventListener("keyup", (e: any) => {
+        if (e.key == "Control") {
+            setCtrl(false);
+        } else if (e.key == "Shift") {
+            setShift(false);
+        }
+    })
+
+
 
     let handleFeatured = (id: any) => {
         return function (e: any) {
@@ -79,7 +102,6 @@ const Home: React.FC<HomeProps> = () => {
             <main className="container">
                 <section className="row">
                     <div className="col-12 my-4">
-                        <button onClick={darkmode}>click me</button>
                         <h1 className="my-4 text-center bl-abril-text">Find A Food Truck:</h1>
                     </div>
                     <section className="d-flex justify-content-center col-12 search-bar">
