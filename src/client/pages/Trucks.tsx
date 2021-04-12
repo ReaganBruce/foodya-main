@@ -52,18 +52,11 @@ const Trucks: React.FC<ITrucks> = () => {
       <div className="card mb-3">
         <div className="row">
           <div className="col-md-4">
-            {/* <img src={`${truck.image_url}`} key={`truck-photo-${truck.id}`} className="card-photo" alt=""/> */}
-
-            {/* </div> */}
             <div className="col-md-8">
               <div className="card-body">
                 <h5 className="card-title"> </h5>
                 <p className="card-text center">
-                  
                 </p>
-                {/* <p className="card-text">
-                  <small className="text-muted">Last updated 3 mins ago</small>
-                </p> */}
               </div>
             </div>
           </div>
