@@ -1,6 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
+
 #become-vendor-container {
     margin-top: 5vh;
     margin-bottom: 10vh
@@ -8,6 +9,7 @@
 
 
 #become-vendor-div {
+    border-radius: 1vh;
     position: absolute;
     margin-left: 30vh;
     margin-right: 0vh;
@@ -39,11 +41,13 @@
 
 #bham-img {
     width: 109.05vh;
-    height: 40vh;
-    filter: drop-shadow(1mm 1mm 1mm rgba(0, 0, 0, 0.432));
+    height: 41.7vh;
+    // filter: drop-shadow(1mm 1mm 1mm rgba(0, 0, 0, 0.432));
 }
 
+
 #signup-vendor-div {
+    border-radius: 1vh;
     position: absolute;
     margin-left: 217vh;
     margin-right: 0vh;
@@ -79,23 +83,18 @@
     text-decoration-color: #D3DE32;
 }
 
-// #vendor-name-input #vendor-email-input, #vendor-password-input :focus-visible{
-
-// }
+#vendor-name-input, #vendor-email-input, #vendor-password-input{
+    border-radius: 10px;
+}
 
 
  #vendor-submit-button {
      margin-top: 6vh;
+     border: 1px solid black;
+     border-radius: 20px !important;
+     background-color: rgba(248, 180, 0, 1) !important;
+     filter: drop-shadow(0mm 1mm .5mm rgba(0, 0, 0, 0.432));
  }
-
-
-
-#foodya-img {
-    width: 20vw;
-    height: 20vh;
-    margin-left: 3.5vh;
-    filter: drop-shadow(-.5mm 1mm 1mm rgba(0, 0, 0, 0.432));
-}
 
 
 #foodya {

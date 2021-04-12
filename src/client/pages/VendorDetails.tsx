@@ -11,6 +11,7 @@ const VendorDetails: React.FC<IVendorDetails> = () => {
                 <section className="row">
                     <div className="col-12">
                         <h1 className="text-center">This is a page for VendorDetails {vendorid}!</h1>
+                        
                     </div>
                 </section>
             </main>

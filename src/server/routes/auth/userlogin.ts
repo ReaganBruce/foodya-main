@@ -12,7 +12,7 @@ router.post("/", authenticate("local"), async (req: ReqUser, res) => {
     console.log(req.body);
     try {
         //@ts-ignore
-        const token = jwt.sign({ userid: req.user.id, email: req.user.email, role: 1 }, config.jwt.secret)
+        const token = jwt.sign({ userid: req.user.id, username: req.user.username, role: 1 }, config.jwt.secret)
         res.json(token);
 
     } catch (err) {

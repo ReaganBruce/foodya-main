@@ -84,8 +84,8 @@ const App: React.FC<IAppProps> = () => {
 					<Route exact path = '/login/vendor'>	
 						<VendorLogin />
 					</Route>
-					//localhost:3000/login/vendor/profile
-					<Route exact path = '/login/vendor/profile'>	
+					//localhost:3000//vendor/profile
+					<Route exact path = '/vendor/profile'>	
 						<VendorProfile />
 					</Route>
 				</Switch>
