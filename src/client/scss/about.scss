@@ -1,17 +1,6 @@
 
-
-
-
-
 .col-12 d-flex {
   margin-top: 10vh;
-}
-
-#div-text {
-  color: white;
-  margin-right: 22vh;
-  margin-top: 3vh;
-  border-top: 1px solid #D3DE32;
 }
 
 
@@ -46,6 +35,22 @@
 
 
 #about-vendors-div {
+  border-radius: 1vh;
+  background-color: #006a71;
+  
+  height: 40vh;
+  width: 75vw;
+}
+
+#about-customers-div {
+  border-radius: 1vh;
+  background-color: #006a71;
+  height: 40vh;
+  width: 75vw;
+}
+
+#about-other-div {
+  border-radius: 1vh;
   background-color: #006a71;
   height: 40vh;
   width: 75vw;
@@ -55,29 +60,31 @@
   margin-top: 10vh;
 }
 
-#about-customers-div {
-  background-color: #006a71;
-  height: 40vh;
-  width: 75vw;
-}
 
 #others-row{
   margin-top: 10vh;
 }
 
-#about-other-div {
-  background-color: #006a71;
-  height: 40vh;
-  width: 75vw;
-}
-
 
 #about-us-footer {
   margin-top: 5vh;
-  margin-bottom: 10vh;
+  margin-bottom: 15vh;
+};
+
+#about-us-btn {
+  border: 1px solid black;
+  border-radius: 20px !important;
+  background-color: rgba(248, 180, 0, 1) !important;
+  filter: drop-shadow(0mm 1mm .5mm rgba(0, 0, 0, 0.432));
+}
+
+#footer-text{
+  text-decoration: underline;
+  text-decoration-color: #006a71;
 }
 
 #div-text-right-1 {
+    font-weight: bold;
     color: white;
     margin-right: 24vh;
     margin-top: 3vh;
@@ -87,6 +94,7 @@
 }
 
 #div-text-right-2 {
+  font-weight: bold;
   color: white;
   margin-right: 19vh;
   margin-top: 3vh;
@@ -95,12 +103,15 @@
 }
 
 #div-text-left {
+    font-weight: bold;
     color: white;
     margin-left: 22vh;
     margin-top: 3vh;
     text-decoration: underline;
     text-decoration-color: #D3DE32;
 }
+
+
 #vendor-div-img {
     width: 50vh;
 }
@@ -116,3 +127,5 @@
 
 
 @import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+

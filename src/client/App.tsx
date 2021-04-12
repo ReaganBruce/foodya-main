@@ -14,6 +14,7 @@ import Contact from './pages/Contact';
 import BecomeVendor from './pages/BecomeVendor';
 import Trucks from './pages/Trucks';
 import TruckDetails from './pages/TruckDetails';
+import Recommendations from "./pages/Recommendation"
 
 //User Routes
 import UserProfile from './pages/UserProfile';
@@ -24,6 +25,7 @@ import VendorDetails from './pages/VendorDetails';
 import VendorLogin from './pages/VendorLogin';
 import VendorProfile from './pages/VendorProfile';
 import NavBar from "./components/NavBar"
+import PrivateRouter from "./components/PrivateRouter"
 
 
 const App: React.FC<IAppProps> = () => {
@@ -55,7 +57,11 @@ const App: React.FC<IAppProps> = () => {
 					//localhost:3000/trucks/:truckdetailsid
 					<Route exact path = '/trucks/:truckdetailsid'>	
 						<TruckDetails />
-					</Route>
+					</Route >
+					//localhost:3000/trucks/recommendations
+					<PrivateRouter exact path = '/recommendations'>
+						<Recommendations />
+					</PrivateRouter>
 					<Route exact path = '/login'>	
 						<Login />
 					</Route>
@@ -63,23 +69,23 @@ const App: React.FC<IAppProps> = () => {
 						<Register />
 					</Route>
 					//localhost:3000/login/profile
-					<Route exact path = '/login/profile'>	
+					<PrivateRouter exact path = '/login/profile'>	
 						<UserProfile />
-					</Route>
+					</PrivateRouter>
 					//localhost:3000/login/favorites
-					<Route exact path = '/login/favorites'>	
+					<PrivateRouter exact path = '/login/favorites'>	
 						<UserFavorites />
-					</Route>
+					</PrivateRouter>
 					//localhost:3000/login/favorites/:vendorid
-					<Route exact path = '/login/favorites/:vendorid'>	
+					<PrivateRouter exact path = '/login/favorites/:vendorid'>	
 						<VendorDetails />
-					</Route>
+					</PrivateRouter>
 					//localhost:3000/login/vendor
 					<Route exact path = '/login/vendor'>	
 						<VendorLogin />
 					</Route>
-					//localhost:3000/login/vendor/profile
-					<Route exact path = '/login/vendor/profile'>	
+					//localhost:3000//vendor/profile
+					<Route exact path = '/vendor/profile'>	
 						<VendorProfile />
 					</Route>
 				</Switch>

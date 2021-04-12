@@ -6,11 +6,16 @@ const NavBar: React.FC<INavBar> = () => {
     const location = useLocation();
     const path = location.pathname;
     let webname: string = path.slice(1,2).toUpperCase() + path.slice(2);
+
     if(webname == "") {
         webname = "Welcome";
     }
     if(webname == "Become-a-vendor") {
         webname = "Become A Vendor!"
+    }
+
+    if(path.includes("trucks/")) {
+        webname = "New Discovery!"
     }
     const TOKEN = window.localStorage.getItem("token");
 
@@ -19,7 +24,7 @@ const NavBar: React.FC<INavBar> = () => {
             <div className="background-ribbon shadow">
                 <div className="foodya justify-content-center">FoodYA!</div>
                 <nav className="nav inner-ribbon justify-content-around shadow py-1">
-                    <img className="image1 col-sm-12 col-md-3 " src="food-truck.png"></img>
+                    <img className="a image1 col-sm-12" src="../assests/thisone.png"></img>
                     <div className="dummy"></div>
                     <div className="dummy"></div>
                     <div className="dummy"></div>

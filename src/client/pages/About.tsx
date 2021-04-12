@@ -53,16 +53,16 @@ const About: React.FC<IAbout> = () => {
 
                 <div className="col-12 d-flex justify-content-center">
                     <div id="about-us-footer" className="row justify-content-center">
-                        <h2>BECOME A PART OF THE COMMUNITY!</h2>
+                        <h2 id="footer-text">BECOME A PART OF THE COMMUNITY!</h2>
                         <div className="col-12 d-flex justify-content-center">
-                            <Link id="about-us-btn" className="btn btn-warning" to={'/login/vendor'}>Sign Up Today!</Link>
+                            <Link id="about-us-btn" className="btn btn-warning btn-lg" to={'/register'}>Sign Up Today!</Link>
                         </div>
                     </div>
                 </div>
             </main>
         </>
     );
-}
+};
 
 
 interface IAbout { }

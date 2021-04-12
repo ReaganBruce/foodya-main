@@ -1,6 +1,7 @@
 import * as React from "react";
 import "../scss/contact";
 
+
 const Contact: React.FC<IContact> = () => {
   return (
     <>

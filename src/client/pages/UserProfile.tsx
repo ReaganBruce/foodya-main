@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useHistory } from  "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const UserProfile: React.FC<IUserProfile> = () => {
     const history = useHistory();
@@ -13,19 +13,19 @@ const UserProfile: React.FC<IUserProfile> = () => {
 
     return (
         <>
-            <main className="container">
-                <section className="row">
-                    <div className="col-12">
-                        <h1 className="text-center">This is a page for UserProfile!</h1>
-                        <button onClick={HandleLogout}>Logout</button>
-                    </div>
-                </section>
-            </main>
+        <main className="container">
+            <section className="row">
+                <div className="col-12">
+                    <h1 className="text-center">This is a page for UserProfile!</h1>
+                    <button className="col-12" onClick={HandleLogout}>Logout</button>
+                </div>
+            </section>
+        </main>
         </>
     );
 
 }
 
-interface IUserProfile {}
+interface IUserProfile { }
 
 export default UserProfile;
