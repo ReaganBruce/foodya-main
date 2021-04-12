@@ -47,8 +47,9 @@ const Register: React.FC<IRegister> = () => {
                 imageUrl: './assets/cool-hair-guy.png',
                 imageWidth: 400,
                 imageHeight: 400,
+                background: 'rgba(0, 105, 112, 0.5)',
                 showConfirmButton: false,
-                timer: 2500
+                timer: 60000
             })
 
         }
@@ -69,7 +70,9 @@ const Register: React.FC<IRegister> = () => {
                                     <div>
                                         <label id="user-email-label">EMAIL</label>
                                     </div>
-                                    <input className="" id="user-email-input"
+                                    <input
+                                        className="form-control"
+                                        id="user-email-input"
                                         value={email}
                                         onChange={e => setEmail(e.target.value)}
                                         type="email"
@@ -79,7 +82,9 @@ const Register: React.FC<IRegister> = () => {
                                     <div>
                                         <label id="user-name-label">USERNAME</label>
                                     </div>
-                                    <input id="user-name-input"
+                                    <input
+                                        className="form-control"
+                                        id="user-name-input"
                                         value={username}
                                         onChange={e => setUsername(e.target.value)}
                                         type="text"
@@ -89,24 +94,31 @@ const Register: React.FC<IRegister> = () => {
                                     <div>
                                         <label id="user-password-label">PASSWORD</label>
                                     </div>
-                                    <input id="user-password-input"
+                                    <input
+                                        className="form-control"
+                                        id="user-password-input"
                                         value={password}
                                         onChange={e => setPassword(e.target.value)}
                                         type="password"
                                         placeholder="Password..."
                                     />
-                                    <div className="d-flex justify-content-end">
-                                        <button onClick={handleSubmit} className="btn btn-warning btn-lg">Register!</button>
+
+                                    <div className="d-flex justify-content-center">
+                                        <button id="reg-btn" onClick={handleSubmit} className="btn btn-warning btn-lg">Register!</button>
+
                                     </div>
 
                                 </form>
-                            </div>
-                            {/* <h4 id="already-account">
-                                Already have an account?
+
+                                <div id="already-account-container" className="container">
+                                    <h4 id="already-account-text">
+                                        Already have an account?
                                 </h4>
-                            <Link to={'/login'} id="vendor-submit-button" className="btn btn-warning btn-lg">
-                                Login!
-                                    </Link> */}
+                                    <Link to={'/login'} id="user-login-button" className="btn btn-warning">
+                                        Login!
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -115,34 +127,6 @@ const Register: React.FC<IRegister> = () => {
     )
 
 }
-
-
-
-{/* <main className="container">
-            <section className="row">
-                <div className="col-12">
-                    <form action="" className="form-group rounded-lg p-3">
-                        <label htmlFor="Email">Email:</label>
-                        <input value={email} onChange={e => setEmail(e.target.value)} type="email" className="form-control form-control-lg mb-2" placeholder="whoareyou@what.com" />
-                        <label htmlFor="Username">Username:</label>
-                        <input value={username} onChange={e => setUsername(e.target.value)} type="text" className="form-control form-control-lg mb-2" placeholder="Username" />
-                        <label htmlFor="password">Password:</label>
-                        <input value={password} onChange={e => setPassword(e.target.value)} type="password" className="form-control form-control-lg mb-2" placeholder="password" />
-                        <div className="d-flex justify-content-end">
-                            <button onClick={handleSubmit} className="btn btn-primary btn-lg">Register!</button>
-                        </div>
-                    </form>
-
-                </div>
-                <div className="col-12">
-                    Already have an account?
-                    <div className="col-12">
-                        <Link to={"/login"}>Login!</Link>
-                    </div>
-                </div>
-            </section>
-        </main> */}
-
 
 
 

@@ -20,12 +20,12 @@ export function configurePassport(app: Application){
     
     //req.body.email, req.body.password
     passport.use(new PassportLocal.Strategy({
-        usernameField: "email",
+        usernameField: "username",
         session: false
-    }, async (email, password, done) => {
+    }, async (username, password, done) => {
         //done(error, user)
         try {
-            const [userFound]: any = await db.user.find("email", email);
+            const [userFound]: any = await db.user.find("username", username);
             if (userFound && compareHash(password, userFound.password)) {
                 delete userFound.password;
                 done(null, userFound);

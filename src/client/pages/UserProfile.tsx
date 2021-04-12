@@ -17,7 +17,7 @@ const UserProfile: React.FC<IUserProfile> = () => {
             <section className="row">
                 <div className="col-12">
                     <h1 className="text-center">This is a page for UserProfile!</h1>
-                    <button onClick={HandleLogout}>Logout</button>
+                    <button className="col-12" onClick={HandleLogout}>Logout</button>
                 </div>
             </section>
         </main>
