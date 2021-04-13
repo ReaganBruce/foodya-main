@@ -3,6 +3,7 @@ import config from "../../config";
 import { authenticate } from "passport";
 import { Router } from 'express';
 import { ReqUser } from "../../types"
+import db from '../../db/index';
 
 const router = Router();
 
@@ -19,6 +20,6 @@ router.post("/", authenticate("local"), async (req: ReqUser, res) => {
         console.log(err);
         res.status(500).json({ message: "my code sucks" });
     }
-}) 
+})
 
 export default router;

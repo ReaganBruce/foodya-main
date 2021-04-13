@@ -4,11 +4,11 @@ import db from '../../../db/index';
 const router = express.Router();
 
 
-// GET user localhost:3000/api/user
+// GET user localhost:3000/api/user/
 router.get('/:userid', async (req, res) => {
-    const userid = Number(req.params.userid);
+    const username = req.params.userid;
     try { 
-        const [getUser] = await db.user.getUser(userid);
+        const [getUser] = await db.user.getUser(username);
         res.json(getUser);
     } catch (error) {
         console.log(error);

@@ -12,9 +12,9 @@ router.post("/", async (req, res) => {
     const newUser = req.body;
     try {
         newUser.password = generateHash(newUser.password)
-        console.log(newUser.password);
+        // console.log(newUser.password);
         const result = await db.user.insert(newUser);
-        console.log(newUser);
+        // console.log(newUser);
         //@ts-ignore
         const token = jwt.sign({ userid: result.insertId, email: newUser.email, role: 1 }, config.jwt.secret)
         res.json(token);
