@@ -23,8 +23,13 @@ const NavBar: React.FC<INavBar> = () => {
     if(path.includes("favorites")) {
         webname = "Favorites";
     } else if (path.includes("/profile/")) {
-        webname = name;
+        webname = path.slice(9);
     }
+
+    if(webname == "Trucks") {
+        webname = "";
+    }
+
     const TOKEN = window.localStorage.getItem("token");
 
     let a = () => {

@@ -5,8 +5,8 @@ const router = express.Router();
 
 
 // GET user localhost:3000/api/user/
-router.get('/:userid', async (req, res) => {
-    const username = req.params.userid;
+router.get('/:username', async (req, res) => {
+    const username = req.params.username;
     try { 
         const [getUser] = await db.user.getUser(username);
         res.json(getUser);

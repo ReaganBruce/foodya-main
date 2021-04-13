@@ -5,20 +5,35 @@ import "../scss/general-styles.scss"
 const moment = require("moment");
 
 const UserProfile: React.FC<IUserProfile> = (props) => {
-
+    const { username } = useParams<Record<string, string | undefined>>();
     const history = useHistory();
     const [userinfo, setUserInfo] = useState(null);
+    const [authorization, setAuth] = useState(null);
     const [shift, setShift] = useState(false);
     const [ctrl, setCtrl] = useState(false);
     const name = window.localStorage.getItem("user");
     const checkDark = window.localStorage.getItem("dark");
+    const token = window.localStorage.getItem("token");
     console.log(userinfo);
+    if (name === username && authorization == null) {
+        setAuth(`'Authorization': 'Bearer ${token}`);
+    }
 
     React.useEffect(() => {
         (async () => {
-            const res = await fetch(`/api/user/${name}`)
-            const user = await res.json();
-            setUserInfo(user);
+            try {
+                const res = await fetch(`/api/user/${username}`, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                })
+                const user = await res.json();
+                setUserInfo(user);
+            } catch (e) {
+                console.log(e);
+
+            }
         })();
     }, [])
 
@@ -66,9 +81,23 @@ const UserProfile: React.FC<IUserProfile> = (props) => {
             <main className="container">
                 <section className="row">
                     <div className="col-12">
-                        <img src="../assests/default.png" alt=""/>
-                        <div>{userinfo?.email} {moment(userinfo?.created_at).format("MMM Do YYYY")} {userinfo?.username} </div>
-                        <button className="button" onClick={HandleLogout}>Logout</button>
+                        <div className="d-flex justify-content-center">
+                            <img className="pfp col-4" src="../assests/default.png" alt="" />
+                            <div className="col-8 custom-card custom-margin-top">
+                                <div className="bl-medium-abril-text">{userinfo?.username}</div>
+                                <div>{userinfo?.email}</div>
+                                <div>Been a member since: {moment(userinfo?.created_at).format("MMM Do YYYY")}</div>
+                                {authorization ? (<div className="d-flex justify-content-end"><button className="button">edit</button></div>) : (<div></div>)}
+                            </div>
+                        </div>
+                        
+                        <div className="spacing-150"></div>
+                        <div className="spacing-100"></div>
+                        {authorization ? (<div className="d-flex justify-content-end"><button className="button" onClick={HandleLogout}>Logout</button></div>) : ( <div></div> )}
+                        <div className="spacing-150"></div>
+                        <div className="spacing-150"></div>
+                        <div className="spacing-150"></div>
+                        {authorization ? (<div className="d-flex justify-content-end"><button className="delete button-danger">Delete My Profile.</button></div>) : ( <img src="" alt=""/> )}
                     </div>
                 </section>
             </main>

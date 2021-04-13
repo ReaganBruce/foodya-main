@@ -233,6 +233,13 @@
     filter: drop-shadow(0mm 1mm .5mm rgba(0, 0, 0, 0.432));
 }
 
+.button-danger {
+    border: 1px solid black;
+    border-radius: 20px !important;
+    background-color: rgb(223, 0, 0) !important;
+    filter: drop-shadow(0mm 1mm .5mm rgba(0, 0, 0, 0.432));
+}
+
 .space {
     width: 20px;
 }
@@ -519,3 +526,8 @@
   
   // Demo only
   // ----------------------------------------------
+
+  //userprofile
+  .custom-margin-top {
+     margin-top: 70px; 
+  }
