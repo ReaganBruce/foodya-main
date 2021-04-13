@@ -1,533 +1,551 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Patua+One&family=Quicksand:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Patua+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Patua+One&family=Quicksand:wght@500&display=swap");
 
 .behind {
-    position:absolute;
-    z-index: -1;
+  position: absolute;
+  z-index: -1;
 }
 
 .margin-210 {
-    margin-left: 210px;
+  margin-left: 210px;
 }
 
 .margin-top-25 {
-    margin-top: 25px;
+  margin-top: 25px;
 }
 
 @media screen and (max-width: 992px) {
-    .bham-image{ 
-        display: none;
-    }
-
+  .bham-image {
+    display: none;
+  }
 }
 .bham-image {
-    width: 52.083333333333336vw;
-    height: 350px;
-    bottom: 3px;
-    opacity: 40%;
-    border-radius: 2000px;
+  width: 52.083333333333336vw;
+  height: 350px;
+  bottom: 3px;
+  opacity: 40%;
+  border-radius: 2000px;
 }
 
 .bl-abril-text {
-    font-family: Abril Fatface;
-    color: #000000;
-    font-size: 70px;
+  font-family: Abril Fatface;
+  color: #000000;
+  font-size: 70px;
 }
 
 .bl-medium-abril-text {
-    font-family: Abril Fatface;
-    color: #000000;
-    font-size: 40px;
+  font-family: Abril Fatface;
+  color: #000000;
+  font-size: 40px;
 }
 
 .bl-small-abril-text {
-    font-family: Abril Fatface;
-    color: #000000;
-    font-size: 20px;
+  font-family: Abril Fatface;
+  color: #000000;
+  font-size: 20px;
 }
 
 .w-medium-abril-text {
-    font-family: Abril Fatface;
-    color: #ffffff;
-    font-size: 40px;
+  font-family: Abril Fatface;
+  color: #ffffff;
+  font-size: 40px;
 }
 
 .shadow {
-    filter: drop-shadow(0mm 1mm .5mm rgba(0, 0, 0, 0.432));
+  filter: drop-shadow(0mm 1mm 0.5mm rgba(0, 0, 0, 0.432));
 }
 
 .w-small-abril-text {
-    font-family: Abril Fatface;
-    color: #ffffff;
-    font-size: 20px;
+  font-family: Abril Fatface;
+  color: #ffffff;
+  font-size: 20px;
 }
 
 .bl-small-quicksand-text {
-    font-family: Quicksand;
-    color: #000000;
-    font-size: 18px;
+  font-family: Quicksand;
+  color: #000000;
+  font-size: 18px;
 }
 
 .underlined {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .background-ribbon {
-    background-color: rgba(0, 106, 113, 0.8);
-    border-top: 4px solid rgba(0, 68, 69, 0.79);
-    border-bottom: 4px solid rgba(0, 68, 69, 0.79);
-    -webkit-background-clip: padding-box; /* for Safari */
-    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
-    padding-top: 1.5rem;
-    padding-bottom: 0.5rem;
-    position: relative;
-    z-index: 15;
+  background-color: rgba(0, 106, 113, 0.8);
+  border-top: 4px solid rgba(0, 68, 69, 0.79);
+  border-bottom: 4px solid rgba(0, 68, 69, 0.79);
+  -webkit-background-clip: padding-box; /* for Safari */
+  background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+  padding-top: 1.5rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+  z-index: 15;
 }
 
-
-
 //home card
- .hover-over div:hover {
-    cursor: pointer;
-    background-color:rgba(165, 255, 228, 0.8) !important;
-    filter: drop-shadow(0mm 2mm .5mm rgba(0, 0, 0, 0.432)) !important;
+.hover-over div:hover {
+  cursor: pointer;
+  background-color: rgba(165, 255, 228, 0.8) !important;
+  filter: drop-shadow(0mm 2mm 0.5mm rgba(0, 0, 0, 0.432)) !important;
 }
 
 .custom-card {
-    height: 200px;
-    border: 4px solid rgba(1, 105, 74, 0.692);
-    border-radius: 20px;
-    background-color:rgba(211, 255, 242, 0.692);
-    margin-bottom: 30px;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 1000;
-    font-size: 20px;
-    filter: drop-shadow(0mm 1mm .5mm rgba(0, 0, 0, 0.432));
+  height: 200px;
+  border: 4px solid rgba(1, 105, 74, 0.692);
+  border-radius: 20px;
+  background-color: rgba(211, 255, 242, 0.692);
+  margin-bottom: 30px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 1000;
+  font-size: 20px;
+  filter: drop-shadow(0mm 1mm 0.5mm rgba(0, 0, 0, 0.432));
 }
-
 
 @media screen and (max-width: 1199px) {
-    .rating {
-        margin-left: 140px;
-        margin-bottom: 30px;
-        margin-right: 10px;
-        background-image: url('https://i.giphy.com/media/cNZqrH5IzOG0xrlWks/giphy.webp');
-        background-size: contain;
-    }
-}
-
-@media screen and (min-width: 1200px) and (max-width: 4000px) {
-    .rating {
-        margin-left: 175px;
-        margin-bottom: 30px;
-        margin-right: 60px;
-        background-image: url('https://i.giphy.com/media/cNZqrH5IzOG0xrlWks/giphy.webp');
-        background-size: contain;
-    }
-}
-
-
-@media screen and (max-width: 992px) {
-    .rating {
-        margin-left: 75px;
-        margin-bottom: 30px;
-        margin-right: 75px;
-        background-image: url('https://i.giphy.com/media/cNZqrH5IzOG0xrlWks/giphy.webp');
-        background-size: contain;
-    }
-    .card-photo {
-        display: none;
-    }
-    .name-margin {
-        margin-left: auto;
-        margin-top: auto;
-    }
-    .margin-210 {
-        margin-left: 1vw;
-        text-align: center;
-    }
-}
-
-@media screen and (min-width: 993px) and (max-width: 4000px) {
-    .name-margin {
-        margin-left: 136px;
-        margin-top: 20px;
-    }
-    .invisible-big {
-        color: rgba(211, 255, 242, 0.001);
-    }
-}
-
-
-@media screen and (max-width: 991px) {
-    .rating {
-            margin-left: auto;
-            margin-bottom: auto;
-            margin-right: auto;
-            width: 65px;
-            height: 50px;
-            background-image: url('https://i.giphy.com/media/cNZqrH5IzOG0xrlWks/giphy.webp');
-            background-size:cover;
-    }
-    .invisible-big{
-        color: rgba(0, 0, 0, 1);
-        font-size: 30px;
-        text-align: center;
-        font-family: Abril Fatface;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .custom-card {
-        height: 250px;
-        border: 4px solid rgba(1, 105, 74, 0.692);
-        border-radius: 20px;
-        background-color:rgba(211, 255, 242, 0.692);
-        margin-bottom: 30px;
-        font-family: 'Quicksand', sans-serif;
-        font-weight: 1000;
-        font-size: 20px;
-        filter: drop-shadow(0mm 1mm .5mm rgba(0, 0, 0, 0.432));
-    }
-}
-
-.tags {
+  .rating {
     margin-left: 140px;
     margin-bottom: 30px;
     margin-right: 10px;
+    background-image: url("https://i.giphy.com/media/cNZqrH5IzOG0xrlWks/giphy.webp");
+    background-size: contain;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 4000px) {
+  .rating {
+    margin-left: 175px;
+    margin-bottom: 30px;
+    margin-right: 60px;
+    background-image: url("https://i.giphy.com/media/cNZqrH5IzOG0xrlWks/giphy.webp");
+    background-size: contain;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .rating {
+    margin-left: 75px;
+    margin-bottom: 30px;
+    margin-right: 75px;
+    background-image: url("https://i.giphy.com/media/cNZqrH5IzOG0xrlWks/giphy.webp");
+    background-size: contain;
+  }
+  .card-photo {
+    display: none;
+  }
+  .name-margin {
+    margin-left: auto;
+    margin-top: auto;
+  }
+  .margin-210 {
+    margin-left: 1vw;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 993px) and (max-width: 4000px) {
+  .name-margin {
+    margin-left: 136px;
+    margin-top: 20px;
+  }
+  .invisible-big {
+    color: rgba(211, 255, 242, 0.001);
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .rating {
+    margin-left: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    width: 65px;
+    height: 50px;
+    background-image: url("https://i.giphy.com/media/cNZqrH5IzOG0xrlWks/giphy.webp");
+    background-size: cover;
+  }
+  .invisible-big {
+    color: rgba(0, 0, 0, 1);
+    font-size: 30px;
+    text-align: center;
+    font-family: Abril Fatface;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .custom-card {
+    height: 250px;
+    border: 4px solid rgba(1, 105, 74, 0.692);
+    border-radius: 20px;
+    background-color: rgba(211, 255, 242, 0.692);
+    margin-bottom: 30px;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 1000;
+    font-size: 20px;
+    filter: drop-shadow(0mm 1mm 0.5mm rgba(0, 0, 0, 0.432));
+  }
+}
+
+.tags {
+  margin-left: 140px;
+  margin-bottom: 30px;
+  margin-right: 10px;
 }
 
 .name {
-    border: 3px solid rgba(0, 116, 81, 0.322);
-    background-color:rgba(83, 255, 203, 0.459);
-    border-radius: 20px;
+  border: 3px solid rgba(0, 116, 81, 0.322);
+  background-color: rgba(83, 255, 203, 0.459);
+  border-radius: 20px;
 }
 
 .card-photo {
-    position: absolute;
-    height: 150px;
-    width: 120px;
-    margin-top: 20px;
-    border-radius: 10px;
-    filter: drop-shadow(0mm 1mm .5mm rgba(0, 0, 0, 0.432));
+  position: absolute;
+  height: 150px;
+  width: 120px;
+  margin-top: 20px;
+  border-radius: 10px;
+  filter: drop-shadow(0mm 1mm 0.5mm rgba(0, 0, 0, 0.432));
 }
 //done with home card
 
-
-
 .curved {
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
 .input {
-    background-color: rgba(196, 196, 196, 0.3);
-    width: 400px;
+  background-color: rgba(196, 196, 196, 0.3);
+  width: 400px;
 }
 
 .button {
-    border: 1px solid black;
-    border-radius: 20px !important;
-    background-color: rgba(248, 180, 0, 1) !important;
-    filter: drop-shadow(0mm 1mm .5mm rgba(0, 0, 0, 0.432));
+  border: 1px solid black;
+  border-radius: 20px !important;
+  background-color: rgba(248, 180, 0, 1) !important;
+  filter: drop-shadow(0mm 1mm 0.5mm rgba(0, 0, 0, 0.432));
 }
 
 .button-danger {
-    border: 1px solid black;
-    border-radius: 20px !important;
-    background-color: rgb(223, 0, 0) !important;
-    filter: drop-shadow(0mm 1mm .5mm rgba(0, 0, 0, 0.432));
+  border: 1px solid black;
+  border-radius: 20px !important;
+  background-color: rgb(223, 0, 0) !important;
+  filter: drop-shadow(0mm 1mm 0.5mm rgba(0, 0, 0, 0.432));
 }
 
 .space {
-    width: 20px;
+  width: 20px;
 }
 
 .spacing-150 {
-    height:150px;
+  height: 150px;
 }
 
 .spacing-100 {
-    height:100px;
+  height: 100px;
 }
 
 .spacing-50 {
-    height: 50px;
+  height: 50px;
 }
 
 .h-3 {
-    height:50px;
+  height: 50px;
 }
 
 @media screen and (max-width: 540px) {
-    .bl-abril-text {
-        font-size: 30px;
-    }
+  .bl-abril-text {
+    font-size: 30px;
+  }
 }
 
 @media screen and (min-width: 1104px) {
-    .mobile-off {
-        padding-top: 70px;
-        display: relative !important;
-    }
-    .mobile-on {
-        display: none;
-        padding: 10px;
-    }
+  .mobile-off {
+    padding-top: 70px;
+    display: relative !important;
+  }
+  .mobile-on {
+    display: none;
+    padding: 10px;
+  }
 
-    // .custom-card {
-    //     margin: 20px;
-    // }
+  // .custom-card {
+  //     margin: 20px;
+  // }
 }
 
 @media screen and (max-width: 1104px) {
-    .mobile-off {
-        display: none !important;
-    }
-    .mobile-on {
-        display: relative;
-        padding: 10px;
-    }
+  .mobile-off {
+    display: none !important;
+  }
+  .mobile-on {
+    display: relative;
+    padding: 10px;
+  }
 }
 
-
-
 @media screen and (max-width: 464px) {
-    .image2 {
-        width: 360px;
-    }
+  .image2 {
+    width: 360px;
+  }
 }
 
 .image2 {
-    z-index: 1;
+  z-index: 1;
 }
 
-
-
-@media screen and (max-width:479px) {
-    .image3 {
-        z-index: 2;
-        position:absolute;
-        width: 140px;
-        height: 100px;
-        right: 20vw;
-    }
-    .hey {
-        z-index: 3;
-        position:absolute;
-        right: 23vw;
-        top: 2.0vh;
-        font-family: Abril Fatface;
-        color: #000000;
-        font-size: 30px;
-        width: 100px;
-    }
-    .welcomeback {
-        z-index: 3;
-        position:absolute;
-        right: 22.3vw;
-        top: 1.5vh;
-        width: 120px;
-        text-align: center;
-        font-family: Abril Fatface;
-        color: #000000;
-        font-size: 18px;
-    }
+@media screen and (max-width: 479px) {
+  .image3 {
+    z-index: 2;
+    position: absolute;
+    width: 140px;
+    height: 100px;
+    right: 20vw;
+  }
+  .hey {
+    z-index: 3;
+    position: absolute;
+    right: 23vw;
+    top: 2vh;
+    font-family: Abril Fatface;
+    color: #000000;
+    font-size: 30px;
+    width: 100px;
+  }
+  .welcomeback {
+    z-index: 3;
+    position: absolute;
+    right: 22.3vw;
+    top: 1.5vh;
+    width: 120px;
+    text-align: center;
+    font-family: Abril Fatface;
+    color: #000000;
+    font-size: 18px;
+  }
 }
 
 @media screen and (min-width: 1641px) and (max-width: 4000px) {
-    .image3 {
-        z-index: 2;
-        position:absolute;
-        width: 200px;
-        height: 150px;
-        right: 20vw;
-    }
-    .hey {
-        z-index: 3;
-        position:absolute;
-        right: 22.4vw;
-        top: 2.4vh;
-        font-family: Abril Fatface;
-        color: #000000;
-        font-size: 40px;
-        width: 100px;
-    }
-    .welcomeback {
-        z-index: 3;
-        position:absolute;
-        right: 22.1vw;
-        top: 1.5vh;
-        width: 130px;
-        text-align: center;
-        font-family: Abril Fatface;
-        color: #000000;
-        font-size: 28px;
-    }
-}
-
-@media screen and (min-width: 480px) and (max-width: 1640px) {
-    .image3 {
-        z-index: 2;
-        position:absolute;
-        width: 200px;
-        height: 150px;
-        right: 20vw;
-    }
-    .hey {
-        z-index: 3;
-        position:absolute;
-        right: 23vw;
-        top: 2.4vh;
-        font-family: Abril Fatface;
-        color: #000000;
-        font-size: 40px;
-        width: 100px;
-    }
-    .welcomeback {
-        z-index: 3;
-        position:absolute;
-        right: 22.3vw;
-        top: 1.5vh;
-        width: 130px;
-        text-align: center;
-        font-family: Abril Fatface;
-        color: #000000;
-        font-size: 28px;
-        
-    }
-}
-
-.fade-in-text {
-    animation: fadeIn linear 3s;
-    -webkit-animation: fadeIn linear 3s;
-    -moz-animation: fadeIn linear 3s;
-    -o-animation: fadeIn linear 3s;
-    -ms-animation: fadeIn linear 3s;
+  .image3 {
+    z-index: 2;
+    position: absolute;
+    width: 200px;
+    height: 150px;
+    right: 20vw;
   }
-  
-  @keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
+  .hey {
+    z-index: 3;
+    position: absolute;
+    right: 22.4vw;
+    top: 2.4vh;
+    font-family: Abril Fatface;
+    color: #000000;
+    font-size: 40px;
+    width: 100px;
   }
-  
-  @-moz-keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
-  }
-  
-  @-webkit-keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
-  }
-  
-  @-o-keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
-  }
-  
-  @-ms-keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
-  }
-
-.background-transparent {
-    background-color: transparent;
-}
-
-.text-shadow {
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.452);
-}
-
-.bl-mid-abril-text {
+  .welcomeback {
+    z-index: 3;
+    position: absolute;
+    right: 22.1vw;
+    top: 1.5vh;
+    width: 130px;
+    text-align: center;
     font-family: Abril Fatface;
     color: #000000;
     font-size: 28px;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 1640px) {
+  .image3 {
+    z-index: 2;
+    position: absolute;
+    width: 200px;
+    height: 150px;
+    right: 20vw;
+  }
+  .hey {
+    z-index: 3;
+    position: absolute;
+    right: 23vw;
+    top: 2.4vh;
+    font-family: Abril Fatface;
+    color: #000000;
+    font-size: 40px;
+    width: 100px;
+  }
+  .welcomeback {
+    z-index: 3;
+    position: absolute;
+    right: 22.3vw;
+    top: 1.5vh;
+    width: 130px;
+    text-align: center;
+    font-family: Abril Fatface;
+    color: #000000;
+    font-size: 28px;
+  }
+}
+
+.fade-in-text {
+  animation: fadeIn linear 3s;
+  -webkit-animation: fadeIn linear 3s;
+  -moz-animation: fadeIn linear 3s;
+  -o-animation: fadeIn linear 3s;
+  -ms-animation: fadeIn linear 3s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.background-transparent {
+  background-color: transparent;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.452);
+}
+
+.bl-mid-abril-text {
+  font-family: Abril Fatface;
+  color: #000000;
+  font-size: 28px;
 }
 
 .line {
-    position:absolute;
-    width:1000px;
-    height: 1000px;
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
 }
-
 
 // carousel
 .icon-cards {
-    position: relative;
-      width: 60vw;
-      height: 40vw;
+  position: relative;
+  width: 60vw;
+  height: 40vw;
+  max-width: 380px;
+  max-height: 250px;
+  margin: 0;
+  color: white;
+  perspective: 1000px;
+  transform-origin: center;
+
+  // This is the element that rotates with the animation
+
+  &__content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: translateZ(-30vw) rotateY(0);
+    animation: carousel 40s infinite cubic-bezier(0.77, 0, 0.175, 1) forwards;
+
+    &.step-animation {
+      animation: carousel 8s infinite steps(1) forwards;
+    }
+  }
+
+  // Individual cards
+
+  &__item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 60vw;
+    height: 40vw;
     max-width: 380px;
     max-height: 250px;
-    margin: 0;
-    color: white;
-      perspective: 1000px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
     transform-origin: center;
-  
-      // This is the element that rotates with the animation
-  
-      &__content {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-      transform-origin: center;
-          transform-style: preserve-3d;
-          transform: translateZ(-30vw) rotateY(0);
-          animation: carousel 40s infinite cubic-bezier(0.77, 0, 0.175, 1) forwards;
-      
-      &.step-animation {
-        animation: carousel 8s infinite steps(1) forwards;
-      }
-      }
-  
-      // Individual cards
-  
-      &__item {
-          position: absolute;
-          top: 0;
-          left: 0;
-      right: 0;
-      bottom: 0;
-          width: 60vw;
-          height: 40vw;
-      max-width: 380px;
-      max-height: 250px;
-      box-shadow: 0 5px 20px rgba(0,0,0,.1);
-          border-radius: 6px;
-      transform-origin: center;
-  
-          &:nth-child(1) {
-              background: #FDD94F;
-              transform: rotateY(0) translateZ(35vw);
-          }
-  
-          &:nth-child(2) {
-              background: #F87949;
-              transform: rotateY(120deg) translateZ(35vw);
-          }
-  
-          &:nth-child(3) {
-              background: #FBAB48;
-              transform: rotateY(240deg) translateZ(35vw);
-          }
-      }
-  }
-  
-  // Carousel animation
-  
-  @keyframes carousel {
-      0%,  17.5%  { transform: translateZ(-35vw) rotateY(0); }
-      27.5%, 45%  { transform: translateZ(-35vw) rotateY(-120deg); }
-      55%, 72.5%  { transform: translateZ(-35vw) rotateY(-240deg); }
-      82.5%, 100% { transform: translateZ(-35vw) rotateY(-360deg); }
-  }
-  
-  
-  // Demo only
-  // ----------------------------------------------
 
-  //userprofile
-  .custom-margin-top {
-     margin-top: 70px; 
+    &:nth-child(1) {
+      background: #fdd94f;
+      transform: rotateY(0) translateZ(35vw);
+    }
+
+    &:nth-child(2) {
+      background: #f87949;
+      transform: rotateY(120deg) translateZ(35vw);
+    }
+
+    &:nth-child(3) {
+      background: #fbab48;
+      transform: rotateY(240deg) translateZ(35vw);
+    }
   }
+}
+
+// Carousel animation
+
+@keyframes carousel {
+  0%,
+  17.5% {
+    transform: translateZ(-35vw) rotateY(0);
+  }
+  27.5%,
+  45% {
+    transform: translateZ(-35vw) rotateY(-120deg);
+  }
+  55%,
+  72.5% {
+    transform: translateZ(-35vw) rotateY(-240deg);
+  }
+  82.5%,
+  100% {
+    transform: translateZ(-35vw) rotateY(-360deg);
+  }
+}
+
+// Demo only
+// ----------------------------------------------
+
+//userprofile
+.custom-margin-top {
+  margin-top: 70px;
+}
+

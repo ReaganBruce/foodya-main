@@ -41,7 +41,7 @@ const Home: React.FC<HomeProps> = () => {
                 <>
                     <div key={`truck-preview-${truck.id}`} onClick={handleFeatured(truck.id)} className="col-5 custom-card text-fun">
                         <img src={`${truck.image_url}`} key={`truck-photo-${truck.id}`} className="card-photo" alt="" />
-                        <div key={`truck-name-${truck.id}`} className="name-margin mt-5 name d-flex text-center justify-content-center">{truck.name}</div>
+                        <div  key={`truck-name-${truck.id}`} className="name-margin mt-5 name d-flex text-center justify-content-center">{truck.name}</div>
                         <section key={`truck-message-${truck.id}`} className="invisible-big rating">5</section>
                     </div>
                 </>

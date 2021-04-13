@@ -127,7 +127,7 @@ const TruckDetails: React.FC<ITruckDetails> = (props) => {
                                     {/* <h1 id="user-rating-text">{`${review.user.name} rated:`}</h1> */}
 
                                     <div id="review-rating">{review?.rating}</div>
-                                    <h1 id="review-text">{review?.text}</h1>
+                                    <h1 id="review-content">{review?.text}</h1>
                                     <a id="read-more-btn" className="btn btn-warning" href={`${review?.url}`} target="_blank">Read More</a>
                                     <h1 id="review-time-created">{moment(review?.time_created).format('MMMM Do YYYY, h:mm a')}</h1>
                                 </div>
