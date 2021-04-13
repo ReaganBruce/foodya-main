@@ -12,7 +12,7 @@ CREATE TABLE users (
     username VARCHAR(50) NOT NULL UNIQUE,
     email VARCHAR(75) NOT NULL UNIQUE,
 	password VARCHAR(200) NOT NULL,
-    roll VARCHAR(50) DEFAULT 'user',
+    role VARCHAR(50) DEFAULT 'user',
     created_at TIMESTAMP DEFAULT NOW(),
     PRIMARY KEY (id)
 );
@@ -22,7 +22,7 @@ CREATE TABLE vendors (
     businessname VARCHAR(50) NOT NULL UNIQUE,
     email VARCHAR(75) NOT NULL UNIQUE,
     password VARCHAR(50) NOT NULL,
-    roll VARCHAR(50) DEFAULT 'admin',
+    role VARCHAR(50) DEFAULT 'admin',
     created_at TIMESTAMP DEFAULT NOW(),
     PRIMARY KEY (id)
 );
