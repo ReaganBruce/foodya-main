@@ -10,7 +10,6 @@ const TruckDetails: React.FC<ITruckDetails> = (props) => {
     const [truckdetails, setTruckDetails] = useState(null);
     const [truckreviews, setTruckReviews] = useState(null);
     const [hours, setHours] = useState(null);
-
     const HoursDivUndefined = () => (
         <div id="hours-container">
             <h4 id="hours-text">BUSINESS HOURS</h4>
@@ -23,14 +22,12 @@ const TruckDetails: React.FC<ITruckDetails> = (props) => {
             <h5 id="time-start">Open: {timeStart}</h5>
             <h5 id="time-end">Close: {timeEnd}</h5>
         </div>)
-
-
-
     let open = truckdetails?.hours?.[0].open[0];
     let openStart = open?.start;
     let openEnd = open?.end;
     let timeStart = openStart?.slice(0, 2) + ":" + openStart?.slice(2, 4);
     let timeEnd = openEnd?.slice(0, 2) + ":" + openEnd?.slice(2, 4);
+    
 
     //Fetch Request to to get food truck by ID
     useEffect(() => {
