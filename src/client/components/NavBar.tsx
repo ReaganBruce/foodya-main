@@ -23,6 +23,9 @@ const NavBar: React.FC<INavBar> = () => {
     }
 
 
+    if(webname == "Trucks") {
+        webname = "";
+    }
     const TOKEN = window.localStorage.getItem("token");
 
     return (

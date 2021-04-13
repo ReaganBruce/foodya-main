@@ -1,14 +1,121 @@
 @import "../../../node_modules/bootstrap/scss/bootstrap.scss";
 
-.trucks {
+#trucks {
+  // margin: auto;
+  // margin-right: 5vh
+  // width: 100%;
+  //   border: 0px solid black;
+  // padding-top: 100px;
+  // padding: 10px;
+  //   justify-content: center;
+  // display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#recommendation-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
+#card-body {
+  background-color: #006a71;
+  box-shadow: 8px 8px 9px -8px black;
+  border: 1px solid #000000;
+}
+
+.custom-card {
+  // height: 200px;
+  border: 1px solid #000000;
+  border-radius: 0px;
+  background-color: #006a71;
+  // margin-bottom: -16px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 1000;
+  font-size: 1.8vh;
+  box-shadow: 8px 8px 9px -8px black;
+}
+
+.card-photo {
+    position: absolute;
+    height: 100%;
+    width: auto;
+    margin-top: 0; 
+    border-radius: 0;
+    filter: drop-shadow(0mm 1mm 0.5mm rgba(0, 0, 0, 0.432));
+}
+
+.location-text {
+  text-align: right;
+  word-wrap: break-word;
+  color: #ffffff;
+}
+
+.truck-name-text {
+  text-align: right;
+  // margin-top: 20px;
+  font-size: 2vh;
+  color: #ffffff;
+  text-decoration: underline;
+  text-decoration-color: #d3de32;
+}
+
+.trucks-card-text-center {
+  color: white;
+  text-align: center;
+}
+
+.rating-text {
+  text-align: right;
+  color: #ffffff;
+}
+
+.phone-text {
+  text-align: right;
+  color: #ffffff;
+}
+
+.bl-abril-text {
+  font-family: Pacifico;
+  color: #ffffff;
+  font-size: 70px;
+  text-decoration: underline;
+  text-decoration-color: #d3de32;
+}
+
+.truck-text2 {
+  font-family: ubuntu;
+  text-align: center;
+  color: #000000;
+  margin-top: 50px;
+  margin-bottom: -20px;
+  font-size: 69px;
+  text-decoration: underline;
+  text-decoration-color: #d3de32;
+}
+
+.trucks-container {
   margin: auto;
+  margin-top: 69px;
+  padding-right: 0px;
+  padding-left: 0px;
+  border: 0px solid black;
   width: 50%;
-  border: 1px solid black;
-  padding: 10px;
+  justify-content: center;
 }
-
 .custom-flex {
-    display: flex !important;
-    flex-direction: column-reverse;
+  display: flex !important;
+  flex-direction: column-reverse;
+  border: 0px;
 }
 
+.btn {
+  // border: 1px solid black;
+  border-radius: 20px !important;
+  background-color: rgba(248, 180, 0, 1) !important;
+  filter: drop-shadow(0mm 1mm 0.5mm rgba(0, 0, 0, 0.432));
+}
+
+// Why isnt it setting margin?
