@@ -66,9 +66,9 @@ const Trucks: React.FC<ITrucks> = () => {
         <section id="recommendation-row" className="row">
           <div className="col-12">
             <div className="trucks-card-text-center">
-              <div id="card-body" className="card-body">
+              <div id="card-body-truck" className="card-body">
                 <div className="col-12 my-4">
-                  <h1 className="my-4 text-center bl-abril-text">Let us help!</h1>
+                  <h1 className="my-4 text-center-help">Let us help!</h1>
                 </div>
                 <br></br>
                 <input type="text" value={startingSearch} onChange={(e) => setStartingSearch(e.target.value)} />
@@ -103,10 +103,10 @@ const Trucks: React.FC<ITrucks> = () => {
             } // if they dont have anything thats in any of them it just spews them all back out. - we could probably do something with if (css style exists) then put out an error statement
           })
           .map((truck: any) => (
-            <div className="col-5 float-left p-0 m-3">
-              <div id="trucks" onClick={handleFoodtruck(truck)} className="justify-content-center p-6 m-6">
-                <div key={`truck-preview-${truck.id}`} className="hover-over custom-card text-fun">
-                <img src={`${truck.image_url}`} key={`truck-photo-${truck.id}`} className="card-photo" alt="" />
+            <div className="col-5 float-left p-0 m-3 pixels-height">
+              <div id="trucks" onClick={handleFoodtruck(truck)} className="justify-content-center p-6 m-6 pixels-height">
+                <div key={`truck-preview-${truck.id}`} className="hover-over custom-card-truck pixels-height">
+                <img src={`${truck.image_url}`} key={`truck-photo-${truck.id}`} className="card-photo-truck" alt="" />
                   <h6 key={`truck-name-${truck.id}`} className="truck-name-text pr-2">
                     {truck.name}
                   </h6>
