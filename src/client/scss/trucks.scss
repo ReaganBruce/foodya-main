@@ -1,4 +1,3 @@
-@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
 
 #trucks {
   // margin: auto;
@@ -118,4 +117,6 @@
   filter: drop-shadow(0mm 1mm 0.5mm rgba(0, 0, 0, 0.432));
 }
 
-// Why isnt it setting margin?
+.pixels-height {
+  height: 164px;
+}

@@ -69,7 +69,7 @@ const App: React.FC<IAppProps> = () => {
 						<Register />
 					</Route>
 					//localhost:3000/login/profile
-					<PrivateRouter exact path = '/login/profile'>	
+					<PrivateRouter exact path = '/profile/:username'>	
 						<UserProfile />
 					</PrivateRouter>
 					//localhost:3000/login/favorites
