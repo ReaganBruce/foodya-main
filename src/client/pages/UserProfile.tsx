@@ -97,7 +97,7 @@ const UserProfile: React.FC<IUserProfile> = (props) => {
                         <div className="spacing-150"></div>
                         <div className="spacing-150"></div>
                         <div className="spacing-150"></div>
-                        {authorization ? (<div className="d-flex justify-content-end"><button className="delete button-danger">Delete My Profile.</button></div>) : ( <img src="" alt=""/> )}
+                        {authorization ? (<div className="d-flex justify-content-end"><button className="delete button-danger">Delete My Profile.</button></div>) : ( <img src="../assests/stick_figure.gif" alt=""/> )}
                     </div>
                 </section>
             </main>
