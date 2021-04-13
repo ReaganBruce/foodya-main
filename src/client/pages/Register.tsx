@@ -38,6 +38,7 @@ const Register: React.FC<IRegister> = () => {
             const result = await res.json();
             console.log(result);
             window.localStorage.setItem("token", result);
+            window.localStorage.setItem("user", username);
             history.push("/");
 
             await Swal.fire({

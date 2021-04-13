@@ -89,8 +89,10 @@
 
 
 //home card
-.hover-over {
+ .hover-over div:hover {
     cursor: pointer;
+    background-color:rgba(165, 255, 228, 0.8) !important;
+    filter: drop-shadow(0mm 2mm .5mm rgba(0, 0, 0, 0.432)) !important;
 }
 
 .custom-card {
@@ -231,6 +233,13 @@
     filter: drop-shadow(0mm 1mm .5mm rgba(0, 0, 0, 0.432));
 }
 
+.button-danger {
+    border: 1px solid black;
+    border-radius: 20px !important;
+    background-color: rgb(223, 0, 0) !important;
+    filter: drop-shadow(0mm 1mm .5mm rgba(0, 0, 0, 0.432));
+}
+
 .space {
     width: 20px;
 }
@@ -294,28 +303,100 @@
     z-index: 1;
 }
 
-.image3 {
-    z-index: 2;
-    position:absolute;
-    width: 200px;
-    height: 150px;
-    right: 20vw;
+
+
+@media screen and (max-width:479px) {
+    .image3 {
+        z-index: 2;
+        position:absolute;
+        width: 140px;
+        height: 100px;
+        right: 20vw;
+    }
+    .hey {
+        z-index: 3;
+        position:absolute;
+        right: 23vw;
+        top: 2.0vh;
+        font-family: Abril Fatface;
+        color: #000000;
+        font-size: 30px;
+        width: 100px;
+    }
+    .welcomeback {
+        z-index: 3;
+        position:absolute;
+        right: 22.3vw;
+        top: 1.5vh;
+        width: 120px;
+        text-align: center;
+        font-family: Abril Fatface;
+        color: #000000;
+        font-size: 18px;
+    }
 }
 
-.welcomeback {
-    z-index: 3;
-    position:absolute;
-    right: 22.3vw;
-    top: 1.5vh;
-    width: 6vw;
-    text-align: center;
+@media screen and (min-width: 1641px) and (max-width: 4000px) {
+    .image3 {
+        z-index: 2;
+        position:absolute;
+        width: 200px;
+        height: 150px;
+        right: 20vw;
+    }
+    .hey {
+        z-index: 3;
+        position:absolute;
+        right: 22.4vw;
+        top: 2.4vh;
+        font-family: Abril Fatface;
+        color: #000000;
+        font-size: 40px;
+        width: 100px;
+    }
+    .welcomeback {
+        z-index: 3;
+        position:absolute;
+        right: 22.1vw;
+        top: 1.5vh;
+        width: 130px;
+        text-align: center;
+        font-family: Abril Fatface;
+        color: #000000;
+        font-size: 28px;
+    }
 }
 
-.hey {
-    z-index: 3;
-    position:absolute;
-    right: 23vw;
-    top: 2.4vh;
+@media screen and (min-width: 480px) and (max-width: 1640px) {
+    .image3 {
+        z-index: 2;
+        position:absolute;
+        width: 200px;
+        height: 150px;
+        right: 20vw;
+    }
+    .hey {
+        z-index: 3;
+        position:absolute;
+        right: 23vw;
+        top: 2.4vh;
+        font-family: Abril Fatface;
+        color: #000000;
+        font-size: 40px;
+        width: 100px;
+    }
+    .welcomeback {
+        z-index: 3;
+        position:absolute;
+        right: 22.3vw;
+        top: 1.5vh;
+        width: 130px;
+        text-align: center;
+        font-family: Abril Fatface;
+        color: #000000;
+        font-size: 28px;
+        
+    }
 }
 
 .fade-in-text {
@@ -363,6 +444,12 @@
     font-family: Abril Fatface;
     color: #000000;
     font-size: 28px;
+}
+
+.line {
+    position:absolute;
+    width:1000px;
+    height: 1000px;
 }
 
 
@@ -439,3 +526,8 @@
   
   // Demo only
   // ----------------------------------------------
+
+  //userprofile
+  .custom-margin-top {
+     margin-top: 70px; 
+  }

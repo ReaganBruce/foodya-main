@@ -1,7 +1,7 @@
 import { Query } from '../../index';
 import { UsersTable, MysqlResponse } from "../../models"
 
-const getUser = (id: number) => Query('SELECT users.username, users.email, users.password FROM users WHERE id = ?', [id]);
+const getUser = (username: string) => Query('SELECT users.* FROM users WHERE username = ?', [username]);
 
 const find = (column: string, value: string) => Query<UsersTable[]>("SELECT * FROM users WHERE ?? = ?", [column, value]); // column is a general use that picks whatever column you are trying to get. email, name, password, etc
 

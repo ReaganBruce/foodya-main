@@ -23,29 +23,43 @@ const Login: React.FC<ILogin> = () => {
             })
             return;
         } else {
+            try {
+                const res = await fetch("/auth/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ username, password })
+                })
+                const result = await res.json();
+                console.log(result);
+                window.localStorage.setItem("token", result);
+                window.localStorage.setItem("user", username);
 
-            const res = await fetch("/auth/login", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ username, password })
-            })
-            const result = await res.json();
-            console.log(result);
-            window.localStorage.setItem("token", result);
-            history.push("/");
+                history.push("/");
 
-            await Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: `Thank you for signing in ${username}!`,
-                imageUrl: './assets/cool-hair-guy.png',
-                imageWidth: 400,
-                imageHeight: 400,
-                showConfirmButton: false,
-                timer: 2500
-            })
+                await Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: `Thank you for signing in ${username}!`,
+                    imageUrl: './assets/cool-hair-guy.png',
+                    imageWidth: 400,
+                    imageHeight: 400,
+                    showConfirmButton: false,
+                    timer: 2500
+                })
+            } catch {
+                await Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: `Sorry, thats not right!`,
+                    imageUrl: './assets/cancel.png',
+                    imageWidth: 400,
+                    imageHeight: 400,
+                    showConfirmButton: false,
+                    timer: 2500
+                })
+            }
         }
 
     }
