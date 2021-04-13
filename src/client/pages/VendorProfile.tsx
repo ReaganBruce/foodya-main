@@ -32,97 +32,61 @@ const VendorProfile: React.FC<IVendorProfile> = () => {
 
   return (
     <>
-      <div id="profile-container" className="row justify-content-end">
-        {getBusiness.map((business) => (
-          <div id="business-column" className="col-12">
-            <div key={`business-card-${business.id}`}>
-              <div className="card shadow h-100">
-                <div className="card-body">
-                  <div
-                    id="customers-row"
-                    className="col-12 d-flex justify-content-center"
-                  >
-                    <div
-                      id="about-customers-div"
-                      className="row justify-content-start"
-                    >
-                      <h4 id="div-text-left">Vendor </h4>
-                      <p id="about-customers-text">
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and
-                        scrambled it to make a type specimen book. It has
-                        survived not only five centuries, but also the leap into
-                        electronic typesetting, remaining essentially unchanged.
-                      </p>
-                    </div>
-                    <div
-                      id="about-customers-div"
-                      className="row justify-content-end"
-                    ></div>
-                    <li>
-                      <h3 className="card-title">{business.name}</h3>
-
-                      <h6 id="business" className="card-text ">
-                        {business.phone}
-                      </h6>
-                      <h6 className="card-text ">{business.address}</h6>
-                      <h6 className="card-text ">{business.city}</h6>
-                      <h6 className="card-text">{business.zipcode}</h6>
-                      <h6 className="card-text">
-                        {`open:`}
-                        {business.start}
-                        {`-`}
-                        {business.end}
-                      </h6>
-                    </li>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-        {getReviews.map((reviews) => (
-          <div id="review-column" className="col-12">
-            <div key={`review-card-${reviews.id}`}>
-              <div className="card shadow h-100">
-                <div className="card-body">
-                  <div
-                    id="about-customers-div"
-                    className="row justify-content-start"
-                  >
-                    <h4 id="div-text-left">Reviews </h4>
-
-                    <p id="about-customers-text"></p>
-                    <p id="about-customers-text">
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and
-                        scrambled it to make a type specimen book. It has
-                        survived not only five centuries, but also the leap into
-                        electronic typesetting, remaining essentially unchanged.
-                        <h5 className="card-title">{reviews.name}</h5>
-                      </p>
-                    
-                    <li>
-                    <h5 className="card-title">{reviews.name}</h5>
-                   
-                      <h6 className="card-text">
-                        {reviews.username}</h6>
-                      <h6 id="about-customers-text" className="card-text ">
-                        {reviews.content}
-                      </h6>
-                      <h6 className="card-text ">{reviews.starview}</h6>
-                    </li>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
+      <div>
+        <img
+          id="customer-image"
+          src="/assets/redezvous-food-truck-2.png"
+          alt="truck-img"
+        />
       </div>
+      <div
+        id="business-row"
+        className="col-12 d-flex justify-content-start"
+      ></div>
+
+      {getBusiness.map((business) => (
+        <div>
+          <div key={`business-card-${business.id}`}>
+            <div id="customer-div">
+              <h4 id="div-text">{business.name} </h4>
+              <p id="business-text">
+                <h6>{business.address}</h6>
+                <h6>{business.city}</h6>
+                <h6>{business.zipcode}</h6>
+                <h6>{business.phone}</h6>
+                <h6>
+                  {`open:`}
+                  {business.start}
+                  {`-`}
+                  {business.end}
+                </h6>
+              </p>
+              <p id="customers-text">
+                Welcome to the {business.name}, serving Central Alabama with two
+                food trucks! We are excited to bring our own twist to Latin
+                American street food, with flavors from around the world.
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+      {getReviews.map((reviews) => (
+        <div id="review-column">
+          <div key={`review-card-${reviews.id}`}>
+            <div id="reviews-div" className="row justify-content-start">
+              <h4 id="div-reviews">{reviews.username} </h4>
+
+              <p id="review-text">
+                <h5>{reviews.name}</h5>
+                <h6>{reviews.content}</h6>
+                <p>{reviews.username}  said their tacos are great my favorite is the Cuban tacos.</p>
+              </p>
+            </div>
+
+            
+          </div>
+        </div>
+      ))}
     </>
   );
 };
@@ -130,64 +94,3 @@ const VendorProfile: React.FC<IVendorProfile> = () => {
 interface IVendorProfile {}
 
 export default VendorProfile;
-
-{
-  /* <main id="vendor-container" className="container">
-<div id="vendors-row" className="col-12 d-flex justify-content-center">
-  <div id="vendors-div" className="row"></div>
-  <div className="d-flex"></div>
-
-  {getBusinesess.map((business) => (
-    <div key={`business-card-${business.id}`}>
-      <h3 id="rectangle-15" className="d-flex justify-content-center"></h3>
-        <div className="card">
-          <h5 className="card-header">Favorites</h5>
-          <div className="card-body">
-            <h5 className="card-title">{business.phone}</h5>
-            <p className="card-text">{business.location}</p>
-          </div>
-        </div>
-        {/* {business.name}
-        {business.id}
-        {business.phone}
-        {business.location}
-        {business.address}
-        {business.start} */
-}
-//     </div>
-//   ))}
-// </div>
-// </main> */}
-
-/*{ <main className="vendor-container">
-<section className="row">
-    <div className="col-12">
-    <div className="container px-9">
-  <div className="row gx-3">
-    <div className="col">
-      <div className="vendor-p-3-border-bg-light">{`Vendor`}</div>
-    </div>
-    <div className="col">
-      <div className="business-p-3 border bg-light">{`getBusiness`}</div>
-    </div>
-  </div>
-  {getBusinesess.map(location => (
-                        <div key={`business-card-${business.id}`}>
-                           <div key={`business-card-${location.id}`}>   
-                            <h1 className=" d-flex justify-content-center">
-                                {business.name}
-                                
-</div>
-
-    <div className="card-body">{`business. :`}</div>
-    <div className="card-body">{`phone :`}</div>
-                        </div>
-                        <div className="card">
-  <h5 className="card-header">Favorites</h5>
-  <div className="card-body">
-    <h5 className="card-title">Vendor 1</h5>
-    <p className="card-text">Address</p>
-  </div>
-</div>
-</section>
-</main> */ //
