@@ -16,8 +16,10 @@
   font-family: Pacifico;
 }
 #contact-us {
-  margin-left: 17vh;
-  font-size: 3vh;
+  margin-left:10vh;
+
+  margin-bottom:10vh;
+  font-size: 5vh;
   padding: 1vh;
   color: white;
   font-weight: bold;
@@ -25,12 +27,22 @@
   text-decoration-color: #d3de32;
 }
 
-#email,
-#phone,
-#address {
+#email {
   color: white;
+  text-align: center;
+}
+#phone {
+  color: white;
+  text-align: center;
+  margin-left: -8vh;
 }
 #contact-form {
+  margin-top: 10vh;
   margin-left: 27vh;
   margin-bottom: 13vh;
+}
+#address {
+  color: white;
+  text-align: center;
+  margin-left: -4vh;
 }
