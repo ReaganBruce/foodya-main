@@ -35,6 +35,24 @@
   font-size: 70px;
 }
 
+.bold {
+    font-weight:900;
+}
+
+.non-bold {
+    font-weight:500;
+}
+
+.space {
+    max-width: 8px;
+}
+
+.bl-quicksand-text {
+    font-family: Quicksand;
+    color: #000000;
+    font-size: 70px;
+  }
+
 .bl-medium-abril-text {
   font-family: Abril Fatface;
   color: #000000;
@@ -90,6 +108,68 @@
   cursor: pointer;
   background-color: rgba(165, 255, 228, 0.8) !important;
   filter: drop-shadow(0mm 2mm 0.5mm rgba(0, 0, 0, 0.432)) !important;
+}
+
+.custom-card2 {
+    height: 300px;
+    border: 4px solid rgba(1, 105, 74, 0.692);
+    border-radius: 20px;
+    background-color: rgba(211, 255, 242, 0.692);
+    margin-bottom: 30px;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 1000;
+    font-size: 20px;
+    filter: drop-shadow(0mm 1mm 0.5mm rgba(0, 0, 0, 0.432));
+  }
+
+  .alter-color {
+      background-color: rgba(196, 196, 196, 0.5) !important;
+      border: 2px solid rgba(196, 196, 196, .25) !important;
+  }
+
+.custom-profile-card {
+        height: 230px;
+        border: 4px solid rgba(1, 105, 74, 0.692);
+        border-radius: 20px;
+        background-color: rgba(211, 255, 242, 0.692);
+        margin-bottom: 30px;
+        font-family: "Quicksand", sans-serif;
+        font-weight: 1000;
+        font-size: 20px;
+}
+
+.hover {
+    cursor: pointer;
+}
+
+.spacing-120 {
+    height: 120px;
+}
+
+#edit {
+    width: 20px;
+    height: 20px;
+}
+// makes the first element centered and second on right
+.center-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.center-right:first-child > span { margin-left: auto; }
+
+.center-right:last-child  > span { margin-right: auto; }
+////////////////////////////////////////////////////////////
+
+.custom-profile-card2 {
+    border: 4px solid rgba(1, 105, 74, 0.692);
+    border-radius: 20px;
+    background-color: rgba(211, 255, 242, 0.692);
+    margin-bottom: 30px;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 1000;
+    font-size: 20px;
 }
 
 .custom-card {

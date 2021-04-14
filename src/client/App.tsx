@@ -26,6 +26,7 @@ import VendorLogin from './pages/VendorLogin';
 import VendorProfile from './pages/VendorProfile';
 import NavBar from "./components/NavBar"
 import PrivateRouter from "./components/PrivateRouter"
+import Settings from './pages/Settings';
 
 
 const App: React.FC<IAppProps> = () => {
@@ -72,8 +73,12 @@ const App: React.FC<IAppProps> = () => {
 					<PrivateRouter exact path = '/profile/:username'>	
 						<UserProfile />
 					</PrivateRouter>
+					//localhost:3000/user/settings
+					<PrivateRouter exact path = '/user/settings'>	
+						<Settings />
+					</PrivateRouter>
 					//localhost:3000/login/favorites
-					<PrivateRouter exact path = '/login/favorites'>	
+					<PrivateRouter exact path = '/user/favorites'>	
 						<UserFavorites />
 					</PrivateRouter>
 					//localhost:3000/login/favorites/:vendorid

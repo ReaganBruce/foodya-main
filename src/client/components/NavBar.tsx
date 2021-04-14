@@ -34,9 +34,12 @@ const NavBar: React.FC<INavBar> = () => {
     if(path.includes("favorites")) {
         webname = "Favorites";
     } else if (path.includes("/profile/")) {
-        webname = path.slice(9);
+        webname = "";
     }
 
+    if(webname == "User/settings") {
+        webname = "Settings";
+    }
 
     let a = () => {
         if(window.localStorage.getItem("move")) {
@@ -63,7 +66,10 @@ const NavBar: React.FC<INavBar> = () => {
                     <NavLink className="bl-text d-flex align-items-center" activeClassName="font-weight-bold border-dark" to="/contact">Contact Us</NavLink>
                     <NavLink className="big bl-text d-flex align-items-center" activeClassName="font-weight-bold border-dark" to="/become-a-vendor">Become A Vendor TODAY!</NavLink>
                     {TOKEN ? (
+                        <div className="d-flex">
                         <NavLink className="btn btn-custom w-text" to={`/profile/${name}`}>Profile</NavLink>
+                        <NavLink className="ml-3" style={{backgroundImage: "url(/assests/gear.png)", backgroundRepeat: "no-repeat", backgroundSize: "100%", width: "40px", height: "40px;"}} to={"/user/settings"}></NavLink>
+                        </div>
                     ) : (
                         <NavLink className="btn btn-custom w-text" to="/login">Login</NavLink>
                     )}

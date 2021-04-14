@@ -46,6 +46,18 @@
     filter: drop-shadow(0mm 1mm .5mm rgba(0, 0, 0, 0.432));
 }
 
+.dummy2 {
+    width: "30px";
+}
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
 .b{
     z-index: 10;
     height:250px;
