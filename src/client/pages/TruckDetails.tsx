@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams} from 'react-router-dom';
 import * as moment from 'moment';
 import "../scss/truckdetails";
 
@@ -10,6 +10,18 @@ const TruckDetails: React.FC<ITruckDetails> = (props) => {
     const [truckdetails, setTruckDetails] = useState(null);
     const [truckreviews, setTruckReviews] = useState(null);
     const [hours, setHours] = useState(null);
+
+    let open = truckdetails?.hours?.[0].open[0];
+    let openStart = open?.start;
+    let openEnd = open?.end;
+    let timeStart = openStart?.slice(0, 2) + ":" + openStart?.slice(2, 4);
+    let timeEnd = openEnd?.slice(0, 2) + ":" + openEnd?.slice(2, 4);
+
+    let address = truckdetails?.location.display_address;
+    let slicedAddress = address?.slice(0, 1) + ", " + address?.slice(1, 2)
+
+
+
     const HoursDivUndefined = () => (
         <div id="hours-container">
             <h4 id="hours-text">BUSINESS HOURS</h4>
@@ -19,15 +31,30 @@ const TruckDetails: React.FC<ITruckDetails> = (props) => {
     const HoursDiv = () => (
         <div id="hours-container">
             <h4 id="hours-text">BUSINESS HOURS</h4>
-            <h5 id="time-start">Open: {timeStart}</h5>
-            <h5 id="time-end">Close: {timeEnd}</h5>
+            <h5 id="time-start">Open: {moment(timeStart, 'H:mm').format('h:mm a')}</h5>
+            <h5 id="time-end">Close: {moment(timeEnd, 'H:mm').format('h:mm a')}</h5>
         </div>)
-    let open = truckdetails?.hours?.[0].open[0];
-    let openStart = open?.start;
-    let openEnd = open?.end;
-    let timeStart = openStart?.slice(0, 2) + ":" + openStart?.slice(2, 4);
-    let timeEnd = openEnd?.slice(0, 2) + ":" + openEnd?.slice(2, 4);
-    
+
+    const Contact = () => (
+        <>
+            <div>
+                <h4 id="contact-text">CONTACT INFORMATION</h4>
+            </div>
+            <div>
+                <h4 id="truck-phone">{truckdetails?.display_phone}</h4>
+            </div>
+        </>
+    )
+    const NoContact = () => (
+        <>
+            <div>
+                <h4 id="contact-text">CONTACT INFORMATION</h4>
+            </div>
+            <div>
+                <h4 id="truck-phone">Contact Information Unavailable</h4>
+            </div>
+        </>
+    )
 
     //Fetch Request to to get food truck by ID
     useEffect(() => {
@@ -43,8 +70,6 @@ const TruckDetails: React.FC<ITruckDetails> = (props) => {
     }, []);
 
 
-
-    //UseEffect for truckdetails
     useEffect(() => {
         let open = truckdetails?.hours?.[0].open[0];
         let openStart = open?.start;
@@ -67,7 +92,10 @@ const TruckDetails: React.FC<ITruckDetails> = (props) => {
 
     }, []);
 
-    //Check if hours is undefined, if not display hours
+
+ 
+
+
     const checkHours = () => {
         if (hours?.opening == undefined || hours?.closing == undefined) {
             return (
@@ -85,6 +113,24 @@ const TruckDetails: React.FC<ITruckDetails> = (props) => {
 
     }
 
+    const checkContact = () => {
+        if (truckdetails?.display_phone == '') {
+            return (
+                <>
+                    <NoContact />
+                </>
+            )
+        } else {
+            return (
+                <>
+
+                    <Contact />
+
+                </>
+            )
+
+        }
+    }
 
     return (
         <>
@@ -93,25 +139,24 @@ const TruckDetails: React.FC<ITruckDetails> = (props) => {
                     <div className="col-12">
                         <div key={`truck-details-card-${truckdetails?.id}`}>
                             <h1 id='truck-name'>{truckdetails?.name}</h1>
-                            <div>
-                                <img id='truck-img' src={`${truckdetails?.image_url}`}></img>
+                            <div className="truck-img-wrapper">
+                                <img className='truck-img' src={`${truckdetails?.image_url}`}></img>
                             </div>
 
                             <div>
+                                <div className="rating-container">
                                 <h5 id="truck-rating">{truckdetails?.rating}</h5>
+                                </div>
                                 <div id="categories-container">
                                     {truckdetails?.categories.map((category: any) => (
                                         <h6 className="badge badge-pill badge-dark" id="category-title">{category?.title}</h6>
                                     ))}
                                 </div>
                             </div>
-                            <div>
-                                <h4 id="contact-text">CONTACT INFORMATION</h4>
-                            </div>
-                            <h4 id="truck-phone">{truckdetails?.display_phone}</h4>
+                            {checkContact()}
                             <div id="locations-container">
                                 <h4 id="locations-text">LOCATION</h4>
-                                <h1 id="truck-display-location">{truckdetails?.location.display_address}</h1>
+                                <h1 id="truck-display-location">{slicedAddress}</h1>
                             </div>
                             {checkHours()}
                         </div>
@@ -121,13 +166,14 @@ const TruckDetails: React.FC<ITruckDetails> = (props) => {
                         {truckreviews?.reviews.map((review: any) => (
                             <div id="user-reviews-container">
                                 <div key={`truck-review-${review?.id}`}>
-                                    <img id="user-img" src={`${review?.user.image_url}`}></img>
-                                    <h1 id="review-user-name">{`Here's what ${review?.user.name} had to say...`}</h1>
-
-                                    {/* <h1 id="user-rating-text">{`${review.user.name} rated:`}</h1> */}
-
+                                    <div className="review-img-wrapper d-flex justify-content-center align-items-center">
+                                        <img className="user-img" src={`${review?.user.image_url}`}
+                                            onError={(e: any) => e.target.setAttribute("src", '../assests/thisone.png')}></img>
+                                    </div>
+                                    <div className="star"></div>
                                     <div id="review-rating">{review?.rating}</div>
-                                    <h1 id="review-content">{review?.text}</h1>
+                                    <h1 id="review-content">"{review?.text}"</h1>
+                                    <h1 id="review-user-name">{review?.user.name}</h1>
                                     <a id="read-more-btn" className="btn btn-warning" href={`${review?.url}`} target="_blank">Read More</a>
                                     <h1 id="review-time-created">{moment(review?.time_created).format('MMMM Do YYYY, h:mm a')}</h1>
                                 </div>
@@ -144,21 +190,3 @@ const TruckDetails: React.FC<ITruckDetails> = (props) => {
 interface ITruckDetails { }
 
 export default TruckDetails;
-
-
-
-
-
-
-//    const { truckreviewsid } = useParams<{ truckreviewsid: string }>();
-
-    // get food truck by id
-
-
-    //get food truck reviews by id
-
-
-    //post reviews 
-
-
-    //reviews delete

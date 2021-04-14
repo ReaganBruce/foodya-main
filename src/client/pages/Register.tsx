@@ -18,7 +18,7 @@ const Register: React.FC<IRegister> = () => {
             await Swal.fire({
                 icon: 'error',
                 title: 'Sorry, you must enter information!',
-                imageUrl: './assets/crashed-truck.png',
+                imageUrl: './assets/cancel.png',
                 imageWidth: 550,
                 imageHeight: 250,
                 timer: 2500
@@ -48,7 +48,6 @@ const Register: React.FC<IRegister> = () => {
                 imageUrl: './assets/cool-hair-guy.png',
                 imageWidth: 400,
                 imageHeight: 400,
-                background: 'rgba(0, 105, 112, 0.5)',
                 showConfirmButton: false,
                 timer: 60000
             })
