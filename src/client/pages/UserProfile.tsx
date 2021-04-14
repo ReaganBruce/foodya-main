@@ -7,6 +7,7 @@ const moment = require("moment");
 const UserProfile: React.FC<IUserProfile> = (props) => {
     const { username } = useParams<Record<string, string | undefined>>();
     const history = useHistory();
+    const [favorite, setFavorite] = useState(null);
     const [userinfo, setUserInfo] = useState(null);
     const [authorization, setAuth] = useState(null);
     const [shift, setShift] = useState(false);
@@ -14,6 +15,7 @@ const UserProfile: React.FC<IUserProfile> = (props) => {
     const name = window.localStorage.getItem("user");
     const checkDark = window.localStorage.getItem("dark");
     const token = window.localStorage.getItem("token");
+    const FAVORITES = JSON.parse(window.localStorage.getItem("favorites"));
     console.log(userinfo);
     if (name === username && authorization == null) {
         setAuth(`'Authorization': 'Bearer ${token}`);
@@ -37,11 +39,30 @@ const UserProfile: React.FC<IUserProfile> = (props) => {
         })();
     }, [])
 
+    React.useEffect(() => {
+        (async () => {
+            if (FAVORITES) {
+                try {
+                    const res = await fetch(`/yelp/businesses/${FAVORITES[0]}/reviews`)
+                    const favorite = await res.json();
+                    setFavorite(favorite);
+                } catch (e) {
+                    console.log(e);
+
+                }
+            }
+        })();
+    }, [])
+
     const HandleLogout = () => {
-        window.localStorage.removeItem("token");
-        window.localStorage.removeItem("name");
-        window.localStorage.removeItem("hey");
+        window.localStorage.clear();
         history.push("/");
+    }
+
+    let handleFeatured = (id: any) => {
+        return function (e: any) {
+            history.push(`/trucks/${id}`);
+        }
     }
 
     //dark mode ctrl+shift+l
@@ -74,30 +95,64 @@ const UserProfile: React.FC<IUserProfile> = (props) => {
         window.location.reload(true);
     }
 
+    const handleFavoritePush = () => {
+        history.push("/user/favorites");
+    }
+
 
 
     return (
         <>
+        <div className="spacing-50"></div>
             <main className="container">
                 <section className="row">
                     <div className="col-12">
                         <div className="d-flex justify-content-center">
                             <img className="pfp col-4" src="../assests/default.png" alt="" />
-                            <div className="col-8 custom-card custom-margin-top">
-                                <div className="bl-medium-abril-text">{userinfo?.username}</div>
-                                <div>{userinfo?.email}</div>
-                                <div>Been a member since: {moment(userinfo?.created_at).format("MMM Do YYYY")}</div>
-                                {authorization ? (<div className="d-flex justify-content-end"><button className="button">edit</button></div>) : (<div></div>)}
+                            <div className="col-8 custom-profile-card alter-color custom-margin-top">
+                                <div className="bl-quicksand-text d-flex center-right">
+                                    <span className="text-center">{userinfo?.username}</span>
+                                    {authorization ? (<span className="d-flex justify-self-end"> <img id="edit" className="mt-3" src="../assests/edit_button.png" alt="" /> </span>) : (<div></div>)}
+                                </div>
+                                <div className="d-flex spacing-120 flex-wrap align-items-around">
+                                    <div className="d-flex col-12">
+                                        <div className="bold">Location:</div>
+                                        <div className="space"></div>
+                                        <div className="non-bold">Birmingham, AL</div>
+                                    </div>
+                                    <div className="d-flex col-12">
+                                        <div className="bold">Number of reviews:</div>
+                                        <div className="space"></div>
+                                        <div className="non-bold">0</div>
+                                    </div>
+                                    <div className="d-flex col-12">
+                                        <div className="bold">Been a member since:</div>
+                                        <div className="space"></div>
+                                        <div className="non-bold">{moment(userinfo?.created_at).format("MMM Do YYYY")}</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div className="spacing-150"></div>
+                        <div className="d-flex justify-content-center">
+                            <div onClick={handleFavoritePush} className="col-12 hover custom-profile-card2 alter-color">
+                                <div className="text-center bl-quicksand-text">Favorites</div>
+                                {favorite ? (<div onClick={handleFeatured(favorite.id)} className="custom-card text-fun">
+                                    <img src={`${favorite.image_url}`} className="card-photo" alt="" />
+                                    <div className="name-margin mt-5 name d-flex text-center justify-content-center">{favorite.name}</div>
+                                </div>) : (<div className="text-center text-muted">no favorites quite yet!</div>)}
+                                <div className="spacing-50"></div>
+                            </div>
+                        </div>
+                        <div className="d-flex justify-content-center">
+                            <div className="col-12 custom-profile-card2 alter-color hover">
+                                <div className="text-center bl-quicksand-text">Reviews</div>
+                                <div className="text-center text-muted">no reviews quite yet!</div>
+                                <div className="spacing-50"></div>
+                            </div>
+                        </div>
+
+                        {authorization ? (<div className="d-flex justify-content-end"><button className="button" onClick={HandleLogout}>Logout</button></div>) : (<div></div>)}
                         <div className="spacing-100"></div>
-                        {authorization ? (<div className="d-flex justify-content-end"><button className="button" onClick={HandleLogout}>Logout</button></div>) : ( <div></div> )}
-                        <div className="spacing-150"></div>
-                        <div className="spacing-150"></div>
-                        <div className="spacing-150"></div>
-                        {authorization ? (<div className="d-flex justify-content-end"><button className="delete button-danger">Delete My Profile.</button></div>) : ( <img src="../assests/stick_figure.gif" alt=""/> )}
                     </div>
                 </section>
             </main>

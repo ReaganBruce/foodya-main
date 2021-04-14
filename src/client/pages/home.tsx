@@ -15,6 +15,24 @@ const Home: React.FC<HomeProps> = () => {
     const checkDark = window.localStorage.getItem("dark");
     // console.log(trucks)
 
+    //dark mode ctrl+shift+l
+    window.addEventListener("keydown", (e: any) => {
+        if (e.key == "Control") {
+            setCtrl(true);
+        } else if (e.key == "Shift") {
+            setShift(true);
+        } else if (e.key == "L" && ctrl == true && shift == true) {
+            darkmode();
+        }
+    })
+    window.addEventListener("keyup", (e: any) => {
+        if (e.key == "Control") {
+            setCtrl(false);
+        } else if (e.key == "Shift") {
+            setShift(false);
+        }
+    })
+
     React.useEffect(() => {
         (async () => {
             console.log("hello")
@@ -30,8 +48,8 @@ const Home: React.FC<HomeProps> = () => {
     }
 
     let handleFeatured = (id: any) => {
-        return function(e: any) {
-        history.push("/vendor/profile");
+        return function (e: any) {
+            history.push(`/trucks/${id}`);
         }
     }
 
@@ -41,7 +59,7 @@ const Home: React.FC<HomeProps> = () => {
                 <>
                     <div key={`truck-preview-${truck.id}`} onClick={handleFeatured(truck.id)} className="col-5 custom-card text-fun">
                         <img src={`${truck.image_url}`} key={`truck-photo-${truck.id}`} className="card-photo" alt="" />
-                        <div  key={`truck-name-${truck.id}`} className="name-margin mt-5 name d-flex text-center justify-content-center">{truck.name}</div>
+                        <div key={`truck-name-${truck.id}`} className="name-margin mt-5 name d-flex text-center justify-content-center">{truck.name}</div>
                         <section key={`truck-message-${truck.id}`} className="invisible-big rating">5</section>
                     </div>
                 </>
@@ -84,7 +102,7 @@ const Home: React.FC<HomeProps> = () => {
 
     return (
         <>
-            <div style={{ backgroundImage: "url(/assests/homepageline.png)", backgroundRepeat: "no-repeat", backgroundSize: "100%"}}>
+            <div style={{ backgroundImage: "url(/assests/homepageline.png)", backgroundRepeat: "no-repeat", backgroundSize: "100%" }}>
                 <main className="container">
                     <section className="row">
                         <div className="col-12 my-4">

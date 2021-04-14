@@ -27,7 +27,7 @@ const TruckDetails: React.FC<ITruckDetails> = (props) => {
     let openEnd = open?.end;
     let timeStart = openStart?.slice(0, 2) + ":" + openStart?.slice(2, 4);
     let timeEnd = openEnd?.slice(0, 2) + ":" + openEnd?.slice(2, 4);
-    
+
 
     //Fetch Request to to get food truck by ID
     useEffect(() => {
@@ -121,7 +121,9 @@ const TruckDetails: React.FC<ITruckDetails> = (props) => {
                         {truckreviews?.reviews.map((review: any) => (
                             <div id="user-reviews-container">
                                 <div key={`truck-review-${review?.id}`}>
-                                    <img id="user-img" src={`${review?.user.image_url}`}></img>
+                                    <div className="image-cropper d-flex justify-content-center align-items-center">
+                                        <img id="" src={`${review?.user.image_url}`}></img>
+                                    </div>
                                     <h1 id="review-user-name">{`Here's what ${review?.user.name} had to say...`}</h1>
 
                                     {/* <h1 id="user-rating-text">{`${review.user.name} rated:`}</h1> */}

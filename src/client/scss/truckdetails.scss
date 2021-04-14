@@ -22,6 +22,29 @@
   text-decoration-color: #d3de32;
 }
 
+/////////////////////////////////////////////////////////////////////
+.image-cropper {
+  background-color: rgba(75, 75, 75, 0.705);
+  max-width: 200px;
+  height: 200px;
+  position: absolute;
+  overflow: hidden;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;  
+}
+
+.image-cropper img{
+  display: absolute;
+  // margin: 0 auto;
+  height: auto;
+  width: 100%; 
+  margin: 0 0 0 0;
+
+}
+////////////////////////////////////////////////////////////////////
 #truck-img {
   border-radius: 1vh;
   padding-left: 5vh;
