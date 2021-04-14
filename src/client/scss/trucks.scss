@@ -47,26 +47,28 @@
 
 .card-photo-truck {
     position: absolute;
-    height: 100%;
+    height: 98%;
     width: auto;
     margin-top: 0; 
     border-radius: 0;
-    filter: drop-shadow(0mm 1mm 0.5mm rgba(0, 0, 0, 0.432));
+    // filter: drop-shadow(0mm 1mm 0.5mm rgba(0, 0, 0, 0.432));
 }
 
 .location-text {
   text-align: right;
   word-wrap: break-word;
+  font-size: 2vh;
   color: #ffffff;
 }
 
 .truck-name-text {
   text-align: right;
-  // margin-top: 20px;
-  font-size: 2vh;
+  font-family: ubuntu;
+  font-size: 4vh;
   color: #ffffff;
   text-decoration: underline;
   text-decoration-color: #d3de32;
+  cursor: pointer;
 }
 
 .trucks-card-text-center {
@@ -84,7 +86,7 @@
   color: #ffffff;
 }
 
-.my-4 text-center-help {
+#truck-help {
   font-family: Pacifico;
   color: #ffffff;
   font-size: 70px;
@@ -97,7 +99,7 @@
   text-align: center;
   color: #000000;
   margin-top: 50px;
-  margin-bottom: -20px;
+  margin-bottom: 20px;
   font-size: 69px;
   text-decoration: underline;
   text-decoration-color: #d3de32;
@@ -127,4 +129,10 @@
 
 .pixels-height {
   height: 164px;
+}
+
+#trucks-image-wrapper {
+    width: 150px; /* width of container */
+    height: 150px; /* height of container */
+    overflow: hidden;
 }
