@@ -126,9 +126,9 @@ const Home: React.FC<HomeProps> = () => {
                         <div className="col-12 d-flex justify-content-center">
                             <figure className="icon-cards mt-3">
                                 <div className="icon-cards__content" >
-                                    <div className="icon-cards__item d-flex align-items-center justify-content-center "><img className="size-up" src="../assets/p3_FoodTruck_HL1903_gi819016352.png" alt="" /></div>
-                                    <div className="icon-cards__item d-flex align-items-center justify-content-center"><img className="size-up" src="../assets/bham.png" alt="" /></div>
-                                    <div className="icon-cards__item d-flex align-items-center justify-content-center"><img className="size-up" src="../assets/01eee050afff4d52488eb0574ea0fec3-railroad-park.png" alt="" /></div>
+                                    <div className="icon-cards__item d-flex align-items-center justify-content-center "><img className="size" src="../assets/p3_FoodTruck_HL1903_gi819016352.png" alt="" /></div>
+                                    <div className="icon-cards__item d-flex align-items-center justify-content-center"><img className="size" src="../assets/bham.png" alt="" /></div>
+                                    <div className="icon-cards__item d-flex align-items-center justify-content-center"><img className="size" src="../assets/01eee050afff4d52488eb0574ea0fec3-railroad-park.png" alt="" /></div>
                                 </div>
                             </figure>
                             {/* <img src="../assests/bham.png" className="behind bham-image" alt="" /> */}

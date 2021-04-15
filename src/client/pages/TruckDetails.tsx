@@ -11,7 +11,7 @@ const TruckDetails: React.FC<ITruckDetails> = (props) => {
     const [truckreviews, setTruckReviews] = useState(null);
     const [hours, setHours] = useState(null);
     const [loaded, setLoaded] = useState(false);
-    const [turnOff, setTurnOff] = useState('');
+    const [turnOff, setTurnOff] = useState(null);
 
 
 
@@ -25,23 +25,6 @@ const TruckDetails: React.FC<ITruckDetails> = (props) => {
     let slicedAddress = address?.slice(0, 1) + ", " + address?.slice(1, 2)
 
     const FAV = JSON.parse(window.localStorage.getItem("fuck me seriously lol i am going to taco bell after this"));
-
-
-    const saveHandler = () => {
-        if (TOKEN) {
-            const FAV = JSON.parse(window.localStorage.getItem("fuck me seriously lol i am going to taco bell after this"))
-            if (FAV) {
-                window.localStorage.setItem("fuck me seriously lol i am going to taco bell after this", JSON.stringify([...FAV, truckdetails?.id]));
-            } else {
-                window.localStorage.setItem("fuck me seriously lol i am going to taco bell after this", JSON.stringify([truckdetails?.id]));
-            }
-        } else {
-
-        }
-       setTurnOff('turnOff');
-    }
-
-
 
 
     const HoursDivUndefined = () => (
@@ -165,6 +148,37 @@ const TruckDetails: React.FC<ITruckDetails> = (props) => {
         }, 1000);
     }, [loaded]);
 
+    let removeHandler = (id: any) => {
+
+        return () => {
+            console.log(FAV.indexOf(id));
+            FAV.splice(FAV.indexOf(id), 1);
+            if (FAV[0]) {
+                window.localStorage.setItem("fuck me seriously lol i am going to taco bell after this", JSON.stringify([FAV]));
+            } else {
+                localStorage.removeItem("fuck me seriously lol i am going to taco bell after this")
+            }
+            setTurnOff(undefined);
+        }
+    }
+
+    const saveHandler = () => {
+        if (TOKEN) {
+            const FAV = JSON.parse(window.localStorage.getItem("fuck me seriously lol i am going to taco bell after this"))
+            if (FAV) {
+                window.localStorage.setItem("fuck me seriously lol i am going to taco bell after this", JSON.stringify([...FAV, truckdetails?.id]));
+            } else {
+                window.localStorage.setItem("fuck me seriously lol i am going to taco bell after this", JSON.stringify([truckdetails?.id]));
+            }
+        } else {
+
+        }
+       setTurnOff('turnOff');
+    }
+
+
+
+
     
     if (loaded) {
         return (
@@ -177,8 +191,12 @@ const TruckDetails: React.FC<ITruckDetails> = (props) => {
                                 <div className="truck-img-wrapper">
                                     <img className='truck-img' src={`${truckdetails?.image_url}`}></img>
                                 </div>
-                                {TOKEN && !FAV?.includes(truckdetails?.id) ? (<button id="save-btn" className={`btn btn-warning btn-lg ${turnOff}`} onClick={saveHandler}>FAVORITE</button>)
-                                    : (<div id="save-btn"></div>
+                                
+                                 {TOKEN && !FAV?.includes(truckdetails?.id) && !turnOff ? (<button id="save-btn" className={`btn btn-warning btn-lg`} onClick={saveHandler}>FAVORITE</button>)
+                                    : (<> </>
+                                    )}
+                                    {TOKEN && FAV?.includes(truckdetails?.id) ? (<button id="save-btn" className={`btn btn-warning btn-lg`} onClick={removeHandler(truckdetails?.id)}>UN-FAVORITE</button>)
+                                    : ( <> </>
                                     )}
                                 <div>
                                     <div className="rating-container">

@@ -70,7 +70,7 @@ const Favorites: React.FC<IFavorites> = () => {
                     {favorites?.map((favorite: any) => (
                         <div key={`truck-preview-${favorite.id}`} className={`hover-over pointer col-5 m-3 custom-card text-fun`}>
                             <img src={`${favorite.image_url}`} key={`truck-photo-${favorite.id}`} className="card-photo" alt="" />
-                            <div key={`truck-name-${favorite.id}`} className="name-margin mt-5 name d-flex text-center justify-content-center">{favorite.name}</div>
+                            <div key={`truck-name-${favorite.id}`} onClick={handleFeatured(favorite.id)} className="name-margin mt-5 name d-flex text-center justify-content-center">{favorite.name}</div>
                             <button className="btn btn-warning margin-special" onClick={removeHandler(favorite.id)}>Remove</button>
                         </div>
                     ))}
