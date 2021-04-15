@@ -3,13 +3,21 @@ import "../scss/general-styles"
 import { useHistory } from "react-router-dom";
 
 const Settings: React.FC<ISettings> = () => {
+    const name = window.localStorage.getItem("user")
     const history = useHistory();
     const HandleLogout = () => {
         window.localStorage.clear();
         history.push("/");
     }
-    const handleDelete = () => {
-        console.log("logic here")
+    const handleDelete = async (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+        const res = await fetch(`/api/user/${name}`, {
+            method: "DELETE",
+        })
+        window.localStorage.clear();
+        if(res.ok) {
+            history.push(`/`);
+        }
     }
     return (
         <>

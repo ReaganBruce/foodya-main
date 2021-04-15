@@ -7,8 +7,11 @@ const find = (column: string, value: string) => Query<UsersTable[]>("SELECT * FR
 
 const insert = (newUser: {email: string, username: string, password: string}) => Query<MysqlResponse>("INSERT INTO users SET ?", newUser);
 
+const destroy = (username: string) => Query("DELETE FROM users WHERE username = ?", [username]);
+
 export default {
     find,
     insert,
-    getUser
+    getUser,
+    destroy
 }

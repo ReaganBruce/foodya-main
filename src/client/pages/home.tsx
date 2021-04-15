@@ -35,7 +35,7 @@ const Home: React.FC<HomeProps> = () => {
 
     React.useEffect(() => {
         (async () => {
-            console.log("hello")
+            // console.log("hello")
             const res = await fetch("/yelp/food-truck/birmingham-al")
             const trucks = await res.json();
             setTrucks(trucks);
@@ -100,6 +100,10 @@ const Home: React.FC<HomeProps> = () => {
         setTruck(truck);
     }
 
+    let handleTruckPage = () => {
+        history.push("/trucks")
+    }
+
     return (
         <>
             <div style={{ backgroundImage: "url(/assests/homepageline.png)", backgroundRepeat: "no-repeat", backgroundSize: "100%" }}>
@@ -122,25 +126,26 @@ const Home: React.FC<HomeProps> = () => {
                         <div className="col-12 d-flex justify-content-center">
                             <figure className="icon-cards mt-3">
                                 <div className="icon-cards__content" >
-                                    <div className="icon-cards__item d-flex align-items-center justify-content-center"><span className="h1">🙂</span></div>
-                                    <div className="icon-cards__item d-flex align-items-center justify-content-center"><span className="h1">😊</span></div>
-                                    <div className="icon-cards__item d-flex align-items-center justify-content-center"><span className="h1">😀</span></div>
+                                    <div className="icon-cards__item d-flex align-items-center justify-content-center "><img className="size-up" src="../assets/p3_FoodTruck_HL1903_gi819016352.png" alt="" /></div>
+                                    <div className="icon-cards__item d-flex align-items-center justify-content-center"><img className="size-up" src="../assets/bham.png" alt="" /></div>
+                                    <div className="icon-cards__item d-flex align-items-center justify-content-center"><img className="size-up" src="../assets/01eee050afff4d52488eb0574ea0fec3-railroad-park.png" alt="" /></div>
                                 </div>
                             </figure>
-                            <img src="../assests/bham.png" className="behind bham-image" alt="" />
+                            {/* <img src="../assests/bham.png" className="behind bham-image" alt="" /> */}
                         </div>
                     </section>
                     <div className="spacing-50"></div>
                     <section className="row overflow-hidden">
-                        <div className="mobile-on bl-small-quicksand-text">Our purpose is to provide. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                        <div className="mobile-on bl-small-quicksand-text">We want to set you up with a foodtruck today, head on over and be one of the first to try and rate one of the many incredible foodtrucks Birmingham has to offer!</div>
                         <div className="d-flex justify-content-center col-md-12 my-5">
-                            <p className="mobile-off col-3 bl-small-quicksand-text">Our purpose is to provide. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                            <p className="mobile-off col-3 bl-medium-quicksand-text">We want to set you up with a foodtruck today, head on over and be one of the first to try and rate one of the many incredible foodtrucks Birmingham has to <br/> offer!</p>
+                            <img className="custom-exhaust absolute small-size flip-horizontally mobile-offf pointer" onClick={handleTruckPage} src="https://cdn3.iconfinder.com/data/icons/pollution-line-1/96/exhaust_pollution_car_smoke-512.png" alt="" />
                             <img className="image2" onMouseEnter={handleHey} onMouseLeave={handleWelcomeBack} src="../assests/foodtruck-banner.png" alt="" />
                             {hey ? (<> <img className="image3 fade-in-text" src="../assests/speechbubble.png" alt="" />
                                 {WelcomeBack ? (<div className="fade-in-text welcomeback text-shadow background-transparent text-wrap">Welcome back!</div>) : (<div className="fade-in-text hey text-shadow background-transparent">Hey!</div>)}</>) : (<span></span>)}
-                            <p className="mobile-off col-3 bl-small-quicksand-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                            <p className="mobile-off col-3 bl-medium-quicksand-text">Our purpose is to provide. Provide for our customers and provide for our vendors! We hope you find everything you are looking for, but if you dont we here at FoodYA! are only a message away.</p>
                         </div>
-                        <div className="mobile-on bl-small-quicksand-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                        <div className="mobile-on bl-small-quicksand-text">Our purpose is to provide. Provide for our customers and provide for our vendors! We hope you find everything you are looking for, but if you dont we here at FoodYA! are only a message away.</div>
 
                     </section>
                     <section className="row">

@@ -53,6 +53,12 @@
     font-size: 70px;
   }
 
+  .bl-medium-quicksand-text {
+    font-family: Quicksand;
+    color: #000000;
+    font-size: 21px;
+  }
+
 .bl-medium-abril-text {
   font-family: Abril Fatface;
   color: #000000;
@@ -125,6 +131,33 @@
   .alter-color {
       background-color: rgba(196, 196, 196, 0.5) !important;
       border: 2px solid rgba(196, 196, 196, .25) !important;
+  }
+
+  .size {
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .small-size {
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .custom-exhaust {
+    margin-top: 200px;
+    margin-right: 455px;
+  }
+
+  .flip-horizontally {
+    transform: scaleX(-1);
+  }
+
+  .size-up {
+    width: 450px;
+    height: auto;
+    border-radius: 10px;;
   }
 
 .custom-profile-card {
@@ -334,6 +367,12 @@
 
 .h-3 {
   height: 50px;
+}
+
+@media screen and (max-width: 1200px) {
+  .mobile-offf {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 540px) {

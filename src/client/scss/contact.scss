@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Patua+One&family=Quicksand:wght@500&display=swap");
+
 #contact-sidebar {
   display: flex;
   text-align: center;
@@ -6,9 +8,36 @@
   width: 80px;
   background-color: #c9c9c9;
 }
+
+.custom-card3 {
+  margin-top: 50px;
+    height: auto;
+    border: 4px solid rgba(1, 105, 74, 0.692);
+    border-radius: 20px;
+    background-color: #006a71;
+    padding-bottom: 50px;
+    margin-bottom: 30px;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 1000;
+    font-size: 20px;
+    filter: drop-shadow(0mm 1mm 0.5mm rgba(0, 0, 0, 0.432));
+}
+
+.w-small-quicksand-text {
+  font-family: Quicksand;
+  color: white;
+  font-size: 30px;
+}
+
+.height-info {
+  height: 200px;
+} 
+
+.padding-b {
+  padding-bottom: 50px;
+}
+
 #foodya-register {
-  margin-top: 3vh;
-  margin-left: 31vh;
   color: white;
   text-decoration: underline;
   text-decoration-color: #d3de32;

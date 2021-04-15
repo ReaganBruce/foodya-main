@@ -104,11 +104,11 @@ const Trucks: React.FC<ITrucks> = () => {
           })
           .map((truck: any) => (
             <div className="col-5 float-left p-0 m-3 pixels-height">
-              <div id="trucks" onClick={handleFoodtruck(truck)} className="justify-content-center p-6 m-6 pixels-height">
-                <div key={`truck-preview-${truck.id}`} className="hover-over custom-card-truck pixels-height">
+              <div id="trucks" onClick={handleFoodtruck(truck)} className="pointer justify-content-center p-6 m-6 pixels-height">
+                <div key={`truck-preview-${truck.id}`} className="custom-card-truck pixels-height">
                   <div id="truck-image-wrapper">
                     {" "}
-                    <img src={`${truck.image_url}`} key={`truck-photo-${truck.id}`} className="card-photo-truck" alt="" />
+                    <img src={`${truck.image_url}`} key={`truck-photo-${truck.id}`} className="hover-over card-photo-truck" alt="" />
                   </div>
                   <h6 key={`truck-name-${truck.id}`} className="truck-name-text pr-2">
                     {truck.name}
