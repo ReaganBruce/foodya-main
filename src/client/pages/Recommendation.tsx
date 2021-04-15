@@ -1,12 +1,14 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useParams, useHistory } from "react-router-dom";
 import '../scss/trucks';
 
 const Recommendations: React.FC<IRecommendations> = () => {
     const [trucks, setTrucks] = useState(null);
+    const [loaded, setLoaded] = useState(false);
     const TOKEN = window.localStorage.getItem("token");
     const R = JSON.parse(window.localStorage.getItem("rec"));
+    const userName = window.localStorage.getItem("user");
     const history = useHistory();
     let m: number = 0;
     let hd: number = 0;
@@ -28,6 +30,7 @@ const Recommendations: React.FC<IRecommendations> = () => {
     let indian: number = 0;
     let caterers: number = 0;
 
+
     React.useEffect(() => {
         (async () => {
             const res = await fetch("/yelp/food-truck/birmingham-al")
@@ -36,6 +39,7 @@ const Recommendations: React.FC<IRecommendations> = () => {
 
         })();
     }, []);
+
 
     if (TOKEN && R) {
         R.map((tag: string) => { //possibilities Mexican, Hot dogs, Burgers, Vegan, Specialty Food, Chicken Shop, British, Soul Food, Asian Fusion, Barbeque, Indonesian, Sushi Bars, Imported Food, Seafood, Venezuelan, American (Traditional), Tacos, Indian, Caterers
@@ -130,31 +134,86 @@ const Recommendations: React.FC<IRecommendations> = () => {
             })
         }
         let check = Math.max(...style());
-        // console.log(check)
         return check;
     }
 
-    return (
-        <>
-            <main className="container">
-                <section className="justify-content-center row">
-                    <div className="text-center col-12">Recommendations</div>
-                    <div></div>
-                    <div className="custom-flex">
-                        {trucks?.businesses.map((truck: any) =>
-                        (
-                            <div key={`key-${truck.id}`} style={{ order: handleDisplay(truck) }} >
-                                {truck.name}
+
+    const handleClick = (truck: any) => {
+        return function () {
+            history.push(`/trucks/${truck.id}`)
+        }
+    }
+
+
+    const handleLoad = () => {
+        setLoaded(true);
+    };
+
+    useEffect(() => {
+        setTimeout(() => {
+            handleLoad(); //After three seconds call handleLoad(), which has setLoaded() === true.
+        }, 1000);
+    }, [loaded]);
+
+
+
+    if (loaded) {
+
+        return (
+            <>
+                <main className="trucks-container">
+                    <section id="recommendation-row" className="row">
+                        <div className="col-12">
+                            <div className="trucks-card-text-center">
+                                <div id="card-body-truck" className="card-body">
+                                    <div className="col-12 my-4">
+                                        <h1 id="rec-truck-help" className="my-4 text-center">
+                                            {`${userName} Recommendations!`}
+                                        </h1>
+                                    </div>
+                                </div>
                             </div>
-                        )
-                        )}
+                        </div>
+                    </section>
+                </main>
+
+                <div className="row justify-content-center align-items-center">
+                    <div className="rec-custom-flex">
+                        {trucks?.businesses.map((truck: any) => (
+                            <div style={{ order: handleDisplay(truck) }} className="col mt-4 mb-1">
+                                <div id="trucks" className="justify-content-center p-6 m-6 pixels-height">
+                                    <div key={`truck-card-${truck.id}`} onClick={handleClick(truck)} className="pointer custom-card-truck pixels-height">
+                                        <div id="truck-image-wrapper">
+                                            {" "}
+                                            <img src={`${truck.image_url}`} key={`truck-photo-${truck.id}`} className="card-photo-truck" alt="" />
+                                        </div>
+                                        <h6 key={`truck-name-${truck.id}`} className="truck-name-text pr-2">
+                                            {truck.name}
+                                        </h6>
+                                        <p className="location-text pr-2">{truck.location.display_address.slice(0, 1) + ", " + truck.location.display_address.slice(1, 2)}</p>
+                                        <p className="phone-text pr-2">{truck.display_phone}</p>
+                                        <p className="rating-text pr-2">Rating: {truck.rating}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                </section>
-            </main>
-        </>
-    );
+                </div>
+            </>
+        );
+    } else {
+        return (
+            <>
+                <div className="loader">
+                    Loading...
+                </div>
+            </>
+        )
+    }
 };
 
 interface IRecommendations { }
 
 export default Recommendations;
+
+

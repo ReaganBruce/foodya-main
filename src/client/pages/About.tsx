@@ -17,7 +17,7 @@ const About: React.FC<IAbout> = () => {
                         <h4 id="div-text-right-1">OUR VENDORS</h4>
                         <p id="about-vendor-text">
                             Customers had no way to find a food truck they might like unless they happened to stumble upon them, whether at an event or on social media.
-                            Food trucks were creating social media pages and websites, but struggled to reach new customers.
+                            Food trucks were creating social media pages and websites, but struggled to reach new customers. 
                             They had to rely heavily on word of mouth or paid advertising. Here at FoodYA! we make it easy for customers to find our vendors!
                         </p>
                     </div>
@@ -27,9 +27,9 @@ const About: React.FC<IAbout> = () => {
                     <div id="about-customers-div" className="row justify-content-start">
                         <h4 id="div-text-left">FOR AND BY BHAM!</h4>
                         <p id="about-customers-text">
-                            We believe that Birmingham is a booming city! Birmingham is the heart of the south when it comes to innovation,
-                            so naturally food trucks play a huge roll in our culture. We offer many local food trucks that are Birmingham based,
-                            and a hot commodity for locals!
+                           We believe that Birmingham is a booming city! Birmingham is the heart of the south when it comes to innovation, 
+                           so naturally food trucks play a huge roll in our culture. We offer many local food trucks that are Birmingham based,
+                           and a hot commodity for locals!
                         </p>
                     </div>
                     <div id="about-customers-div" className="row justify-content-end">
