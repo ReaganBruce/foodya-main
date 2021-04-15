@@ -15,7 +15,7 @@ const UserProfile: React.FC<IUserProfile> = (props) => {
     const name = window.localStorage.getItem("user");
     const checkDark = window.localStorage.getItem("dark");
     const token = window.localStorage.getItem("token");
-    const FAVORITES = JSON.parse(window.localStorage.getItem("favorites"));
+    const FAVORITES = JSON.parse(window.localStorage.getItem("fuck me seriously lol i am going to taco bell after this"));
     console.log(userinfo);
     if (name === username && authorization == null) {
         setAuth(`'Authorization': 'Bearer ${token}`);
@@ -43,7 +43,7 @@ const UserProfile: React.FC<IUserProfile> = (props) => {
         (async () => {
             if (FAVORITES) {
                 try {
-                    const res = await fetch(`/yelp/businesses/${FAVORITES[0]}/reviews`)
+                    const res = await fetch(`/yelp/${FAVORITES[0]}`)
                     const favorite = await res.json();
                     setFavorite(favorite);
                 } catch (e) {
@@ -103,7 +103,7 @@ const UserProfile: React.FC<IUserProfile> = (props) => {
 
     return (
         <>
-        <div className="spacing-50"></div>
+            <div className="spacing-50"></div>
             <main className="container">
                 <section className="row">
                     <div className="col-12">
@@ -137,10 +137,16 @@ const UserProfile: React.FC<IUserProfile> = (props) => {
                             <div onClick={handleFavoritePush} className="col-12 hover custom-profile-card2 alter-color">
                                 <div className="text-center bl-quicksand-text">Favorites</div>
                                 {favorite ? (<div onClick={handleFeatured(favorite.id)} className="custom-card text-fun">
-                                    <img src={`${favorite.image_url}`} className="card-photo" alt="" />
-                                    <div className="name-margin mt-5 name d-flex text-center justify-content-center">{favorite.name}</div>
-                                </div>) : (<div className="text-center text-muted">no favorites quite yet!</div>)}
-                                <div className="spacing-50"></div>
+                                    <img src={`${favorite.image_url}`} className="ml-4 card-photo" alt="" />
+                                    <div className="col-12">
+                                        <div className="name-margin mt-4 extra-margin name d-flex text-center justify-content-center">{favorite.name}</div>
+                                    </div>
+                                    <div className="spacing-25 col-12"></div>
+                                    <div className="col-12">
+                                        <div className="name-margin mt-4 extra-margin d-flex text-center justify-content-center bl-medium-quicksand-text">I made the favorites list?! Heck yeah!</div>
+                                    </div>
+                                </div>) : (<> <div className="text-center text-muted">no favorites quite yet!</div> <div className="spacing-50"></div> </>)}
+
                             </div>
                         </div>
                         <div className="d-flex justify-content-center">
