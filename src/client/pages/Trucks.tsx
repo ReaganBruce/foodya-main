@@ -130,7 +130,7 @@ const Trucks: React.FC<ITrucks> = () => {
                       {truck.name}
                     </h6>
                     {/* <br></br> */}
-                    <p className="location-text pr-2">{truck.location.display_address}</p>
+                    <p className="location-text pr-2">{truck.location.display_address.slice(0, 1) + ", " + truck.location.display_address.slice(1, 2)}</p>
                     <p className="phone-text pr-2">{truck.display_phone}</p>
                     <p className="rating-text pr-2">Rating: {truck.rating}</p>
                   </div>
