@@ -16,6 +16,19 @@
   margin-top: 25px;
 }
 
+.dont-show-me {
+  display: none;
+}
+
+.goback-margin {
+  margin-left: 60px;
+}
+
+.margin-special {
+  margin-left:230px;
+  margin-top: 25px;
+}
+
 @media screen and (max-width: 992px) {
   .bham-image {
     display: none;
@@ -252,6 +265,15 @@
     margin-left: auto;
     margin-top: auto;
   }
+
+  .extra-margin {
+    margin-left: 100vw !important;
+  }
+
+  .spacing-25 {
+    height: 25px;
+  }
+
   .margin-210 {
     margin-left: 1vw;
     text-align: center;
