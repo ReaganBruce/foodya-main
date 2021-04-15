@@ -18,10 +18,14 @@ const NavBar: React.FC<INavBar> = () => {
     }
 
     if(path.includes("trucks/")) {
-        webname = "New Discovery!"
+        webname = ""
     }
     
     if(path.includes("Contact/")) {
+        webname = ""
+    }
+
+    if(path.includes("/recommendation")) {
         webname = ""
     }
 

@@ -16,9 +16,9 @@ const About: React.FC<IAbout> = () => {
                     <div id="about-vendors-div" className="row justify-content-end">
                         <h4 id="div-text-right-1">OUR VENDORS</h4>
                         <p id="about-vendor-text">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                            Customers had no way to find a food truck they might like unless they happened to stumble upon them, whether at an event or on social media.
+                            Food trucks were creating social media pages and websites, but struggled to reach new customers. 
+                            They had to rely heavily on word of mouth or paid advertising. Here at FoodYA! we make it easy for customers to find our vendors!
                         </p>
                     </div>
                 </div>
@@ -27,9 +27,9 @@ const About: React.FC<IAbout> = () => {
                     <div id="about-customers-div" className="row justify-content-start">
                         <h4 id="div-text-left">FOR AND BY BHAM!</h4>
                         <p id="about-customers-text">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                           We believe that Birmingham is a booming city! Birmingham is the heart of the south when it comes to innovation, 
+                           so naturally food trucks play a huge roll in our culture. We offer many local food trucks that are Birmingham based,
+                           and a hot commodity for locals!
                         </p>
                     </div>
                     <div id="about-customers-div" className="row justify-content-end">
@@ -44,9 +44,8 @@ const About: React.FC<IAbout> = () => {
                     <div id="about-other-div" className="row justify-content-end">
                         <h4 id="div-text-right-2">WHAT MAKES US UNIQUE?</h4>
                         <p id="about-other-text">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                            FoodYA! is dedicated to connecting the food truck community.
+                            We host listings for food trucks and mobile food vendors, as well as where they’re serving now and where to find them next.
                         </p>
                     </div>
                 </div>

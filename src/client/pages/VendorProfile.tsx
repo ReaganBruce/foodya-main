@@ -75,15 +75,12 @@ const VendorProfile: React.FC<IVendorProfile> = () => {
           <div key={`review-card-${reviews.id}`}>
             <div id="reviews-div" className="row justify-content-start">
               <h4 id="div-reviews">{reviews.username} </h4>
-
               <p id="review-text">
                 <h5>{reviews.name}</h5>
                 <h6>{reviews.content}</h6>
                 <p>{reviews.username}  said their tacos are great my favorite is the Cuban tacos.</p>
               </p>
-            </div>
-
-            
+            </div>       
           </div>
         </div>
       ))}
